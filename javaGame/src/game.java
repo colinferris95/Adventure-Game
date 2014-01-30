@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Game {
+public class game {
 
   // Global
   public static int currentLocale = 0;  // Player starts in The Lab.
