@@ -9,7 +9,7 @@ public class game {
 
     //globals
     public static locationClass[] locations; // game locations
-    public static gameItems[] itemsArray;
+    public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
     public static int  currentLoc = 0; // the current location of the player
     public static boolean playFlag = true; // bool flag for game status
@@ -133,6 +133,8 @@ public class game {
                 {8,6,8,8}   //open field
         };
 
+
+
     }
 
     private static void display(){
@@ -174,15 +176,23 @@ public class game {
 
         int newLoc = locMatrix[currentLoc][direction];
 
-        if (newLoc >= 0 && newLoc < 7){ //valid locations
+        if (newLoc >= 0 && newLoc < 8){ //valid locations
             currentLoc = newLoc; //set current player location
-            display(); // output to console
+             // output to console
             moveCount = moveCount + 1; //add to move count
         } else if(newLoc == 8){
             System.out.println("you cannot go this way"); //going the wrong way
-            display();
+
         }
 
+        if (locations[currentLoc].getHasVisited() == false ){
+            locations[currentLoc].setHasVisited(true);
+            gameScore = gameScore + 5;
+            System.out.println("you have found a new location");
+            display();
+        } else{
+            display();
+        }
 
     }
 

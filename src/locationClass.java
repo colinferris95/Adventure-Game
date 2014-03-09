@@ -6,6 +6,7 @@ public class locationClass {
     private String name;
     private String desc;
     private String item;
+    private boolean hasVisited = false;
 
     public String getItem() {
         return item;
@@ -39,6 +40,14 @@ public class locationClass {
     public void setName(String value) {
         name = value;
     }
+
+    public boolean getHasVisited() {
+        return hasVisited;
+    }
+    public void setHasVisited(boolean hasVisited) {
+        this.hasVisited = hasVisited;
+    }
+
 
 
     public String toString() {
