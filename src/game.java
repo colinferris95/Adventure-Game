@@ -38,15 +38,19 @@ public class game {
         //items
         gameItems item0 = new gameItems(0);
         item0.setItemName("Sword of justice");
+        item0.setLoc(0);
 
         gameItems item1 = new gameItems(1);
         item1.setItemName("Staff of peril");
+        item1.setLoc(1);
 
         gameItems item2 = new gameItems(2);
         item2.setItemName("Gray Shield");
+        item2.setLoc(2);
 
         gameItems item3 = new gameItems(3);
         item3.setItemName("Knights Helm");
+        item3.setLoc(3);
 
         //magic items
         gameItems item4 = new gameItems(4);
@@ -59,22 +63,26 @@ public class game {
 
         locationClass loc0 = new locationClass(0);
         loc0.setName("Dungeon");
-        loc0.setItem(item1.getItemName());
+        loc0.setItem(item0.getItemName());
 
         locationClass loc1 = new locationClass(1);
         loc1.setName("Maze");
+        loc1.setItem(item1.getItemName());
 
         locationClass loc2 = new locationClass(2);
         loc2.setName("East Bridge");
+        loc2.setItem(item2.getItemName());
 
         locationClass loc3 = new locationClass(3);
         loc3.setName("Troll");
+        loc3.setItem(item3.getItemName());
 
         locationClass loc4 = new locationClass(4);
         loc4.setName("West Gate");
 
         locationClass loc5 = new locationClass(5);
         loc5.setName("Magick Shoppe");
+
 
         locationClass loc6 = new locationClass(6);
         loc6.setName("Golden Gate");
@@ -98,15 +106,6 @@ public class game {
         locations[6] = loc6; //Golden Gate
         locations[7] = loc7; //Open Field
         locations[8] = loc8;
-
-
-        itemsArray = new gameItems[6];
-        itemsArray[0] = item0;
-        itemsArray[1] = item1;
-        itemsArray[2] = item2;
-        itemsArray[3] = item3;
-        itemsArray[4] = item4;
-        itemsArray[5] = item5;
 
 
 
@@ -139,16 +138,19 @@ public class game {
 
     private static void display(){
         System.out.println(locations[currentLoc].getName());
-        System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " your ratio is " + scoreRatio + " " + locations[currentLoc].getItem());
+        System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " your ratio is " + scoreRatio + " " + "The item in this location is " + locations[currentLoc].getItem());
+    }
+
+    private static void takeItem(){
+
+
+
     }
 
     private static void getCommand() {
 
         Scanner inputReader = new Scanner(System.in);
         input = inputReader.nextLine();  // command is global.
-
-
-
     }
 
     private static void move(){
@@ -172,6 +174,15 @@ public class game {
             //opens inventory
         } else if (input.equalsIgnoreCase("i")){
 
+        } else if (input.equalsIgnoreCase("h") || input.equalsIgnoreCase("help")){
+            System.out.println("The commands to this game are simple type n,s,e, or w to move");
+            return;//weird bug
+        } else if (input.equalsIgnoreCase("d") || input.equalsIgnoreCase("dance")){
+            System.out.println("You dance the day away...... boy are you tired....");
+            return;//weird bug
+        }
+        else {
+            System.out.println("I do not understand your query");
         }
 
         int newLoc = locMatrix[currentLoc][direction];

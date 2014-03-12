@@ -28,16 +28,24 @@ public class gameItems {
         this.desc = desc;
     }
 
+    public int getLoc() {
+        return loc;
+    }
+
+    public void setLoc(int loc) {
+        this.loc = loc;
+    }
+
 
     public String toString() {
         return "[item: id=" + this.id + " name="+ this.itemName + " desc=" + this.desc + "]";
 
     }
 
+
+
     private int    id;
-
-
-
     private String itemName;
     private String desc;
+    private int loc;
 }
