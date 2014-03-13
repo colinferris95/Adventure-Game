@@ -3,6 +3,7 @@
  */
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class game {
 
@@ -64,6 +65,7 @@ public class game {
         locationClass loc0 = new locationClass(0);
         loc0.setName("Dungeon");
         loc0.setItem(item0.getItemName());
+        loc0.setHasVisited(true);
 
         locationClass loc1 = new locationClass(1);
         loc1.setName("Maze");
@@ -142,7 +144,9 @@ public class game {
     }
 
     private static void takeItem(){
-
+            if (locations[currentLoc].getName() == "Dungeon"){
+                inventory[0] = locations[currentLoc].getItem();
+            }
 
 
     }
@@ -172,7 +176,6 @@ public class game {
         else if (input.equalsIgnoreCase("w")){
             direction = 3;
             //opens inventory
-        } else if (input.equalsIgnoreCase("i")){
 
         } else if (input.equalsIgnoreCase("h") || input.equalsIgnoreCase("help")){
             System.out.println("The commands to this game are simple type n,s,e, or w to move");
@@ -180,7 +183,14 @@ public class game {
         } else if (input.equalsIgnoreCase("d") || input.equalsIgnoreCase("dance")){
             System.out.println("You dance the day away...... boy are you tired....");
             return;//weird bug
+        } else if (input.equalsIgnoreCase("i")){
+            System.out.println(Arrays.toString(inventory));
+            return;
+        } else if (input.equalsIgnoreCase("t")){
+            takeItem();
+            return;
         }
+
         else {
             System.out.println("I do not understand your query");
         }
@@ -191,19 +201,22 @@ public class game {
             currentLoc = newLoc; //set current player location
              // output to console
             moveCount = moveCount + 1; //add to move count
+
+            if (locations[currentLoc].getHasVisited() == false ){
+                locations[currentLoc].setHasVisited(true);
+                gameScore = gameScore + 5;
+                System.out.println("you have found a new location");
+                display();
+            } else{
+                display();
+            }
+
         } else if(newLoc == 8){
             System.out.println("you cannot go this way"); //going the wrong way
 
         }
 
-        if (locations[currentLoc].getHasVisited() == false ){
-            locations[currentLoc].setHasVisited(true);
-            gameScore = gameScore + 5;
-            System.out.println("you have found a new location");
-            display();
-        } else{
-            display();
-        }
+
 
     }
 
