@@ -16,27 +16,26 @@ public class locationClass {
         this.item = item;
     }
 
-
-
-
-
     public locationClass(int theId) {
         id = theId;
     }
+
     public int getId() {
-
-
         return id;
     }
+
     public String getDesc() {
         return desc;
     }
+
     public void setDesc(String value) {
         desc = value;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String value) {
         name = value;
     }
@@ -44,6 +43,7 @@ public class locationClass {
     public boolean getHasVisited() {
         return hasVisited;
     }
+
     public void setHasVisited(boolean hasVisited) {
         this.hasVisited = hasVisited;
     }

@@ -1,6 +1,4 @@
-/**
- * Created by cfer on 3/8/14.
- */
+
 public class gameItems {
 
 
@@ -23,7 +21,6 @@ public class gameItems {
         this.itemName = itemName;
     }
 
-
     public void setDesc(String desc) {
         this.desc = desc;
     }
@@ -34,6 +31,14 @@ public class gameItems {
 
     public void setLoc(int loc) {
         this.loc = loc;
+    }
+
+    public gameItems getNext() {
+        return next;
+    }
+
+    public void setNext(gameItems next) {
+        this.next = next;
     }
 
 
@@ -48,4 +53,5 @@ public class gameItems {
     private String itemName;
     private String desc;
     private int loc;
+    private gameItems next = null;
 }
