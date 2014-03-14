@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/water.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/listItem.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locationClass.java" afterPath="$PROJECT_DIR$/src/locationClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +69,7 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="43" selection-start="4937" selection-end="4937" vertical-scroll-proportion="4.4836955" vertical-offset="0" max-vertical-offset="4710">
+            <state line="262" column="28" selection-start="7963" selection-end="7963" vertical-scroll-proportion="0.26630434" vertical-offset="3783" max-vertical-offset="4710">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -576,7 +571,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="43" selection-start="4937" selection-end="4937" vertical-scroll-proportion="4.4836955" vertical-offset="0" max-vertical-offset="4710">
+        <state line="262" column="28" selection-start="7963" selection-end="7963" vertical-scroll-proportion="0.26630434" vertical-offset="3783" max-vertical-offset="4710">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
