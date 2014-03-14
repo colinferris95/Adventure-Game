@@ -63,7 +63,7 @@ public class game {
 
         locationClass loc0 = new locationClass(0);
         loc0.setName("Dungeon");
-        loc0.setItem(item0.getItemName());
+        loc0.setItem("map");
         loc0.setHasVisited(true);
 
         locationClass loc1 = new locationClass(1);
@@ -80,13 +80,15 @@ public class game {
 
         locationClass loc4 = new locationClass(4);
         loc4.setName("Gate");
+        loc4.setItem(item0.getItemName());
 
         locationClass loc5 = new locationClass(5);
         loc5.setName("Magick Shoppe");
 
 
-        locationClass loc6 = new locationClass(6);
+        water loc6 = new water(6);
         loc6.setName("ocean");
+        loc6.setWater("water is here");
 
         locationClass loc7 = new locationClass(7);
         loc7.setName("Open Field");
@@ -122,7 +124,7 @@ public class game {
         locMatrix = new int[][] {
                 //N  S  E  W
                 {4, 8, 1, 2},   //Dungeon cell
-                {8, 8, 6, 8},  // cliffside
+                {8, 8, 6, 0},  // cliffside
                 {3, 5, 0, 8},  //forest
                 {8, 2, 4, 8},   //treasure
                 {7, 0, 8, 3},  //gate
@@ -248,7 +250,7 @@ public class game {
                 display();
             }
 
-            if (locations[currentLoc].getName() == "Magick Shoppe"){
+            if (locations[currentLoc].getName().equals("Magick Shoppe")){
                 createMagicItems();
             }
 
@@ -284,20 +286,24 @@ public class game {
     }
 
     private static void map(){
-        System.out.println("               Game Map");
-        System.out.println("              ");
-        System.out.println("               Open Field");
-        System.out.println("                 ^");
-        System.out.println("                 |");
-        System.out.println("Treasure --->   Gate");
-        System.out.println("  ^              ^");
-        System.out.println("  |              |");
-        System.out.println("Forest  <----- Dungeon ------>  cliffside ------> ocean");
-        System.out.println("  |");
-        System.out.println("  V");
-        System.out.println("Magick Shoppe");
-        System.out.println("         ");
-        return;
 
+        if (inventory[0].equals("map")){
+            System.out.println("               Game Map");
+            System.out.println("              ");
+            System.out.println("               Open Field");
+            System.out.println("                 ^");
+            System.out.println("                 |");
+            System.out.println("Treasure --->   Gate");
+            System.out.println("  ^              ^");
+            System.out.println("  |              |");
+            System.out.println("Forest  <----- Dungeon ------>  cliffside ------> ocean");
+            System.out.println("  |");
+            System.out.println("  V");
+            System.out.println("Magick Shoppe");
+            System.out.println("         ");
+
+        } else{
+            System.out.println("you do not have the map yet");
+        }
     }
 }

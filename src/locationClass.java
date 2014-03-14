@@ -8,6 +8,8 @@ public class locationClass {
     private String item;
     private boolean hasVisited = false;
 
+
+
     public String getItem() {
         return item;
     }
@@ -17,7 +19,7 @@ public class locationClass {
     }
 
     public locationClass(int theId) {
-        id = theId;
+        this.id = theId;
     }
 
     public int getId() {
