@@ -1,0 +1,332 @@
+<html>
+<head>
+<title>game.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+.s1 { color: rgb(128,128,128); font-style: italic; }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,0,255); }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+game.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0"> 
+</span><span class="s1">//imports</span><span class="s0"> 
+</span><span class="s2">import </span><span class="s0">java.util.Scanner; 
+</span><span class="s2">import </span><span class="s0">java.util.Arrays; 
+ 
+</span><span class="s2">public class </span><span class="s0">game { 
+ 
+ 
+    </span><span class="s1">//globals</span><span class="s0"> 
+    </span><span class="s2">public static </span><span class="s0">locationClass[] locations; </span><span class="s1">// game locations</span><span class="s0"> 
+    </span><span class="s2">public static </span><span class="s0">gameItems[] itemsArray; </span><span class="s1">//items array</span><span class="s0"> 
+    </span><span class="s2">public static int</span><span class="s0">[][]  locMatrix; </span><span class="s1">// game matrix</span><span class="s0"> 
+    </span><span class="s2">public static int  </span><span class="s0">currentLoc = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">// the current location of the player</span><span class="s0"> 
+    </span><span class="s2">public static boolean </span><span class="s0">playFlag = </span><span class="s2">true</span><span class="s0">; </span><span class="s1">// bool flag for game status</span><span class="s0"> 
+    </span><span class="s2">public static </span><span class="s0">String input; </span><span class="s1">// player input</span><span class="s0"> 
+    </span><span class="s2">public static int </span><span class="s0">direction ; </span><span class="s1">// player inputed direction</span><span class="s0"> 
+    </span><span class="s2">public static float </span><span class="s0">gameScore = </span><span class="s3">0 </span><span class="s0">; </span><span class="s1">// init game score</span><span class="s0"> 
+    </span><span class="s2">public static float </span><span class="s0">moveCount = </span><span class="s3">1</span><span class="s0">;</span><span class="s1">// inti move counts</span><span class="s0"> 
+    </span><span class="s2">public static </span><span class="s0">String[] inventory; </span><span class="s1">// creates inventory array</span><span class="s0"> 
+ 
+ 
+    </span><span class="s2">public static void </span><span class="s0">main(String[] args) { 
+        System.out.println(</span><span class="s4">&quot;Welcome to Dugeon's Keep: The Java adventure&quot;</span><span class="s0">); </span><span class="s1">// intro text</span><span class="s0"> 
+        run(); 
+ 
+        display(); 
+       </span><span class="s1">//main game loop</span><span class="s0"> 
+        </span><span class="s2">while</span><span class="s0">(playFlag){ 
+ 
+            getCommand(); 
+            move(); 
+ 
+        } 
+    } 
+ 
+    </span><span class="s1">//creates main game objects</span><span class="s0"> 
+    </span><span class="s2">private static void </span><span class="s0">run(){ 
+        </span><span class="s1">//items</span><span class="s0"> 
+        gameItems item0 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">0</span><span class="s0">); 
+        item0.setItemName(</span><span class="s4">&quot;Sword of justice&quot;</span><span class="s0">); 
+        item0.setLoc(</span><span class="s3">0</span><span class="s0">); 
+ 
+        gameItems item1 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">1</span><span class="s0">); 
+        item1.setItemName(</span><span class="s4">&quot;Staff of peril&quot;</span><span class="s0">); 
+        item1.setLoc(</span><span class="s3">1</span><span class="s0">); 
+ 
+        gameItems item2 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">2</span><span class="s0">); 
+        item2.setItemName(</span><span class="s4">&quot;Gray Shield&quot;</span><span class="s0">); 
+        item2.setLoc(</span><span class="s3">2</span><span class="s0">); 
+ 
+        gameItems item3 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">3</span><span class="s0">); 
+        item3.setItemName(</span><span class="s4">&quot;Knights Helm&quot;</span><span class="s0">); 
+        item3.setLoc(</span><span class="s3">3</span><span class="s0">); 
+ 
+        </span><span class="s1">//magic items</span><span class="s0"> 
+        gameItems item4 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">4</span><span class="s0">); 
+        item4.setItemName(</span><span class="s4">&quot;Necklace of Trepidation&quot;</span><span class="s0">); 
+ 
+        gameItems item5 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">5</span><span class="s0">); 
+        item5.setItemName(</span><span class="s4">&quot;Ring of Chaos&quot;</span><span class="s0">); 
+ 
+ 
+ 
+        locationClass loc0 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">0</span><span class="s0">); 
+        loc0.setName(</span><span class="s4">&quot;Dungeon&quot;</span><span class="s0">); 
+        loc0.setItem(</span><span class="s4">&quot;map&quot;</span><span class="s0">); 
+        loc0.setHasVisited(</span><span class="s2">true</span><span class="s0">); 
+ 
+        locationClass loc1 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">1</span><span class="s0">); 
+        loc1.setName(</span><span class="s4">&quot;Cliffside&quot;</span><span class="s0">); 
+        loc1.setItem(item1.getItemName()); 
+ 
+        locationClass loc2 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">2</span><span class="s0">); 
+        loc2.setName(</span><span class="s4">&quot;forest&quot;</span><span class="s0">); 
+        loc2.setItem(item2.getItemName()); 
+ 
+        locationClass loc3 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">3</span><span class="s0">); 
+        loc3.setName(</span><span class="s4">&quot;treasure&quot;</span><span class="s0">); 
+        loc3.setItem(item3.getItemName()); 
+ 
+        locationClass loc4 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">4</span><span class="s0">); 
+        loc4.setName(</span><span class="s4">&quot;Gate&quot;</span><span class="s0">); 
+        loc4.setItem(item0.getItemName()); 
+ 
+        locationClass loc5 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">5</span><span class="s0">); 
+        loc5.setName(</span><span class="s4">&quot;Magick Shoppe&quot;</span><span class="s0">); 
+ 
+ 
+        water loc6 = </span><span class="s2">new </span><span class="s0">water(</span><span class="s3">6</span><span class="s0">); 
+        loc6.setName(</span><span class="s4">&quot;ocean&quot;</span><span class="s0">); 
+        loc6.setWater(</span><span class="s4">&quot;water is here&quot;</span><span class="s0">); 
+ 
+        locationClass loc7 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">7</span><span class="s0">); 
+        loc7.setName(</span><span class="s4">&quot;Open Field&quot;</span><span class="s0">); 
+ 
+        locationClass loc8 = </span><span class="s2">new </span><span class="s0">locationClass(</span><span class="s3">8</span><span class="s0">); 
+        loc8.setName(</span><span class="s4">&quot;the nether&quot;</span><span class="s0">); 
+ 
+ 
+ 
+        locations = </span><span class="s2">new </span><span class="s0">locationClass[</span><span class="s3">9</span><span class="s0">]; 
+ 
+        locations[</span><span class="s3">0</span><span class="s0">] = loc0; </span><span class="s1">//Dungeon cell</span><span class="s0"> 
+        locations[</span><span class="s3">1</span><span class="s0">] = loc1; </span><span class="s1">//cliff</span><span class="s0"> 
+        locations[</span><span class="s3">2</span><span class="s0">] = loc2; </span><span class="s1">//forest</span><span class="s0"> 
+        locations[</span><span class="s3">3</span><span class="s0">] = loc3; </span><span class="s1">//treasure</span><span class="s0"> 
+        locations[</span><span class="s3">4</span><span class="s0">] = loc4; </span><span class="s1">//gate</span><span class="s0"> 
+        locations[</span><span class="s3">5</span><span class="s0">] = loc5; </span><span class="s1">//magick shoppe</span><span class="s0"> 
+        locations[</span><span class="s3">6</span><span class="s0">] = loc6; </span><span class="s1">//ocean</span><span class="s0"> 
+        locations[</span><span class="s3">7</span><span class="s0">] = loc7; </span><span class="s1">//field</span><span class="s0"> 
+        locations[</span><span class="s3">8</span><span class="s0">] = loc8; 
+ 
+ 
+        </span><span class="s1">//inventory</span><span class="s0"> 
+        inventory = </span><span class="s2">new </span><span class="s0">String[</span><span class="s3">6</span><span class="s0">]; 
+        inventory[</span><span class="s3">0</span><span class="s0">] = </span><span class="s2">null</span><span class="s0">; 
+        inventory[</span><span class="s3">1</span><span class="s0">] = </span><span class="s2">null</span><span class="s0">; 
+        inventory[</span><span class="s3">2</span><span class="s0">] = </span><span class="s2">null</span><span class="s0">; 
+        inventory[</span><span class="s3">3</span><span class="s0">] = </span><span class="s2">null</span><span class="s0">; 
+        inventory[</span><span class="s3">4</span><span class="s0">] = </span><span class="s2">null</span><span class="s0">;</span><span class="s1">// magic item</span><span class="s0"> 
+        inventory[</span><span class="s3">5</span><span class="s0">] = </span><span class="s2">null</span><span class="s0">;</span><span class="s1">// magic item</span><span class="s0"> 
+ 
+        </span><span class="s1">// two dimensional matrix</span><span class="s0"> 
+        locMatrix = </span><span class="s2">new int</span><span class="s0">[][] { 
+                </span><span class="s1">//N  S  E  W</span><span class="s0"> 
+                {</span><span class="s3">4</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">1</span><span class="s0">, </span><span class="s3">2</span><span class="s0">},   </span><span class="s1">//Dungeon cell</span><span class="s0"> 
+                {</span><span class="s3">8</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">6</span><span class="s0">, </span><span class="s3">0</span><span class="s0">},  </span><span class="s1">// cliffside</span><span class="s0"> 
+                {</span><span class="s3">3</span><span class="s0">, </span><span class="s3">5</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">8</span><span class="s0">},  </span><span class="s1">//forest</span><span class="s0"> 
+                {</span><span class="s3">8</span><span class="s0">, </span><span class="s3">2</span><span class="s0">, </span><span class="s3">4</span><span class="s0">, </span><span class="s3">8</span><span class="s0">},   </span><span class="s1">//treasure</span><span class="s0"> 
+                {</span><span class="s3">7</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">3</span><span class="s0">},  </span><span class="s1">//gate</span><span class="s0"> 
+                {</span><span class="s3">2</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">8</span><span class="s0">},   </span><span class="s1">//magick shoppe</span><span class="s0"> 
+                {</span><span class="s3">8</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">1 </span><span class="s0">},   </span><span class="s1">//ocean</span><span class="s0"> 
+                {</span><span class="s3">8</span><span class="s0">, </span><span class="s3">4</span><span class="s0">, </span><span class="s3">8</span><span class="s0">, </span><span class="s3">8</span><span class="s0">}   </span><span class="s1">//open field</span><span class="s0"> 
+        }; 
+ 
+ 
+ 
+    } 
+ 
+ 
+    </span><span class="s1">//updates console output with main game info</span><span class="s0"> 
+    </span><span class="s2">private static void </span><span class="s0">display(){ 
+        System.out.println(locations[currentLoc].getName()); 
+        System.out.println(</span><span class="s4">&quot; your score is: &quot; </span><span class="s0">+ gameScore + </span><span class="s4">&quot; your move count is &quot; </span><span class="s0">+ moveCount + </span><span class="s4">&quot; your achievement ratio is &quot; </span><span class="s0">+ gameScore/moveCount + </span><span class="s4">&quot; &quot; </span><span class="s0">+ </span><span class="s4">&quot;The item in this location is &quot; </span><span class="s0">+ locations[currentLoc].getItem()); 
+        nextMove(); 
+    } 
+ 
+    </span><span class="s1">//allows players to pick up items into their inventory</span><span class="s0"> 
+    </span><span class="s2">private static void </span><span class="s0">takeItem(){ 
+            </span><span class="s2">if </span><span class="s0">(locations[currentLoc].getItem() != </span><span class="s2">null</span><span class="s0">){ 
+                inventory[locations[currentLoc].getId()] = locations[currentLoc].getItem(); 
+                System.out.println(</span><span class="s4">&quot;you took an item&quot;</span><span class="s0">); 
+            } </span><span class="s2">else</span><span class="s0">{ 
+                System.out.println(</span><span class="s4">&quot;there is no item here.....&quot;</span><span class="s0">); 
+            } 
+    } 
+ 
+    </span><span class="s1">//ends game by quiting main game loop</span><span class="s0"> 
+    </span><span class="s2">private static void </span><span class="s0">quitGame(){ 
+        playFlag = </span><span class="s2">false</span><span class="s0">; 
+        </span><span class="s2">return</span><span class="s0">; 
+    } 
+ 
+    </span><span class="s1">// shows players possible moves</span><span class="s0"> 
+    </span><span class="s2">private static void </span><span class="s0">nextMove(){ 
+        </span><span class="s2">if </span><span class="s0">(locMatrix[currentLoc][</span><span class="s3">0</span><span class="s0">] != </span><span class="s3">8</span><span class="s0">){ 
+            System.out.println(</span><span class="s4">&quot;you can move north&quot;</span><span class="s0">); 
+        } 
+        </span><span class="s2">if </span><span class="s0">(locMatrix[currentLoc][</span><span class="s3">1</span><span class="s0">] != </span><span class="s3">8</span><span class="s0">){ 
+            System.out.println(</span><span class="s4">&quot;you can move south&quot;</span><span class="s0">); 
+        } 
+        </span><span class="s2">if </span><span class="s0">(locMatrix[currentLoc][</span><span class="s3">2</span><span class="s0">] != </span><span class="s3">8</span><span class="s0">){ 
+            System.out.println(</span><span class="s4">&quot;you can move east&quot;</span><span class="s0">); 
+        } 
+        </span><span class="s2">if </span><span class="s0">(locMatrix[currentLoc][</span><span class="s3">3</span><span class="s0">] != </span><span class="s3">8</span><span class="s0">){ 
+            System.out.println(</span><span class="s4">&quot;you can move west&quot;</span><span class="s0">); 
+        } 
+ 
+    } 
+    </span><span class="s1">//creates player input from text console</span><span class="s0"> 
+    </span><span class="s2">private static void </span><span class="s0">getCommand() { 
+ 
+        Scanner inputReader = </span><span class="s2">new </span><span class="s0">Scanner(System.in); 
+        input = inputReader.nextLine();  </span><span class="s1">// command is global.</span><span class="s0"> 
+    } 
+ 
+    </span><span class="s2">private static void </span><span class="s0">move(){ 
+ 
+        </span><span class="s2">if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;n&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;north&quot;</span><span class="s0">)){ 
+            direction = </span><span class="s3">0</span><span class="s0">; 
+ 
+        } 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;s&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;south&quot;</span><span class="s0">)){ 
+            direction = </span><span class="s3">1</span><span class="s0">; 
+ 
+        } 
+ 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;e&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;east&quot;</span><span class="s0">)){ 
+            direction = </span><span class="s3">2</span><span class="s0">; 
+ 
+        } 
+ 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;w&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;west&quot;</span><span class="s0">)){ 
+            direction = </span><span class="s3">3</span><span class="s0">; 
+ 
+ 
+        } </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;h&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;help&quot;</span><span class="s0">)){ 
+            System.out.println(</span><span class="s4">&quot;The commands to this game are simple type n,s,e, or w to move, i to see your inventory and t to take items&quot;</span><span class="s0">); 
+            </span><span class="s2">return</span><span class="s0">; 
+        } 
+ 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;d&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;dance&quot;</span><span class="s0">)){ 
+            System.out.println(</span><span class="s4">&quot;You dance the day away...... boy are you tired....&quot;</span><span class="s0">); 
+            </span><span class="s2">return</span><span class="s0">; 
+        } 
+ 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;i&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;inventory&quot;</span><span class="s0">)){ 
+            System.out.println(Arrays.toString(inventory)); 
+            </span><span class="s2">return</span><span class="s0">; 
+        } 
+ 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;t&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;take&quot;</span><span class="s0">)){ 
+            takeItem(); 
+            </span><span class="s2">return</span><span class="s0">; 
+        } 
+ 
+        </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;q&quot;</span><span class="s0">) || input.equalsIgnoreCase(</span><span class="s4">&quot;quit&quot;</span><span class="s0">)){ 
+            quitGame(); 
+        } </span><span class="s2">else if </span><span class="s0">(input.equalsIgnoreCase(</span><span class="s4">&quot;m&quot;</span><span class="s0">)){ 
+            map(); 
+        } 
+ 
+        </span><span class="s2">else </span><span class="s0">{ 
+            System.out.println(</span><span class="s4">&quot;I do not understand your query&quot;</span><span class="s0">); 
+        } 
+ 
+        </span><span class="s2">int </span><span class="s0">newLoc = locMatrix[currentLoc][direction]; 
+ 
+        </span><span class="s2">if </span><span class="s0">(newLoc &gt;= </span><span class="s3">0 </span><span class="s0">&amp;&amp; newLoc &lt; </span><span class="s3">8</span><span class="s0">){ </span><span class="s1">//valid locations</span><span class="s0"> 
+            currentLoc = newLoc; </span><span class="s1">//set current player location</span><span class="s0"> 
+             </span><span class="s1">// output to console</span><span class="s0"> 
+            moveCount = moveCount + </span><span class="s3">1</span><span class="s0">; </span><span class="s1">//add to move count</span><span class="s0"> 
+ 
+            </span><span class="s2">if </span><span class="s0">(locations[currentLoc].getHasVisited() == </span><span class="s2">false </span><span class="s0">){ 
+                locations[currentLoc].setHasVisited(</span><span class="s2">true</span><span class="s0">); 
+                gameScore = gameScore + </span><span class="s3">5</span><span class="s0">; 
+                System.out.println(</span><span class="s4">&quot;you have found a new location&quot;</span><span class="s0">); 
+                display(); 
+            } </span><span class="s2">else</span><span class="s0">{ 
+                display(); 
+            } 
+ 
+            </span><span class="s2">if </span><span class="s0">(locations[currentLoc].getName().equals(</span><span class="s4">&quot;Magick Shoppe&quot;</span><span class="s0">)){ 
+                createMagicItems(); 
+            } 
+ 
+        } </span><span class="s2">else if</span><span class="s0">(newLoc == </span><span class="s3">8</span><span class="s0">){ 
+            System.out.println(</span><span class="s4">&quot;you cannot go this way&quot;</span><span class="s0">); </span><span class="s1">//going the wrong way</span><span class="s0"> 
+ 
+        } 
+    } 
+ 
+    </span><span class="s2">private static void </span><span class="s0">createMagicItems() { 
+        </span><span class="s1">// Create the list manager for our magic items.</span><span class="s0"> 
+        listMan magicItems  = </span><span class="s2">new </span><span class="s0">listMan(); 
+        magicItems.setName(</span><span class="s4">&quot;Magic Items&quot;</span><span class="s0">); 
+        magicItems.setDesc(</span><span class="s4">&quot;These are the magic items.&quot;</span><span class="s0">); 
+        magicItems.setHead(</span><span class="s2">null</span><span class="s0">); 
+ 
+        </span><span class="s1">// Create some magic items and put them in the list.</span><span class="s0"> 
+        gameItems item4 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">4</span><span class="s0">); 
+        item4.setItemName(</span><span class="s4">&quot;Necklace of Trepidation&quot;</span><span class="s0">); 
+        item4.setDesc(</span><span class="s4">&quot;this item costs 500 coins&quot;</span><span class="s0">); 
+ 
+        gameItems item5 = </span><span class="s2">new </span><span class="s0">gameItems(</span><span class="s3">5</span><span class="s0">); 
+        item5.setItemName(</span><span class="s4">&quot;Ring of Chaos&quot;</span><span class="s0">); 
+        item5.setDesc(</span><span class="s4">&quot;this item costs 1000 coins&quot;</span><span class="s0">); 
+ 
+        </span><span class="s1">// Link it all up.</span><span class="s0"> 
+        magicItems.setHead(item4); 
+        item4.setNext(item5); 
+        item5.setNext(</span><span class="s2">null</span><span class="s0">); 
+ 
+ 
+        System.out.println(magicItems.toString()); 
+    } 
+ 
+    </span><span class="s2">private static void </span><span class="s0">map(){ 
+ 
+        </span><span class="s2">if </span><span class="s0">(inventory[</span><span class="s3">0</span><span class="s0">].equals(</span><span class="s4">&quot;map&quot;</span><span class="s0">)){ 
+            System.out.println(</span><span class="s4">&quot;               Game Map&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;              &quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;               Open Field&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;                 ^&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;                 |&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;Treasure ---&gt;   Gate&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;  ^              ^&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;  |              |&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;Forest  &lt;----- Dungeon ------&gt;  cliffside ------&gt; ocean&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;  |&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;  V&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;Magick Shoppe&quot;</span><span class="s0">); 
+            System.out.println(</span><span class="s4">&quot;         &quot;</span><span class="s0">); 
+ 
+        } </span><span class="s2">else</span><span class="s0">{ 
+            System.out.println(</span><span class="s4">&quot;you do not have the map yet&quot;</span><span class="s0">); 
+        } 
+    } 
+}</span></pre>
+</body>
+</html>
