@@ -13,7 +13,7 @@ public class game {
     public static int  currentLoc = 0; // the current location of the player
     public static boolean playFlag = true; // bool flag for game status
     public static String input; // player input
-    public static int direction ; // player inputed direction
+    public static int direction  ; // player inputed direction
     public static float gameScore = 0 ; // init game score
     public static float moveCount = 1;// inti move counts
     public static String[] inventory; // creates inventory array
@@ -226,17 +226,26 @@ public class game {
 
         else if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")){
             quitGame();
+            return;
         } else if (input.equalsIgnoreCase("m")){
             map();
+            return;
         }
 
         else {
             System.out.println("I do not understand your query");
         }
 
-        int newLoc = locMatrix[currentLoc][direction];
+        int newLoc = 0;
 
-        if (newLoc >= 0 && newLoc < 8){ //valid locations
+        if(direction >=0){
+         newLoc = locMatrix[currentLoc][direction];
+        } else{
+            System.out.println("something went wrong, ill get back to this");
+        }
+
+
+        if (newLoc >= 0 && newLoc < 8 ){ //valid locations
             currentLoc = newLoc; //set current player location
              // output to console
             moveCount = moveCount + 1; //add to move count
