@@ -227,7 +227,7 @@ public class game {
         else if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")){
             quitGame();
             return;
-        } else if (input.equalsIgnoreCase("m")){
+        } else if (input.equalsIgnoreCase("m") || input.equalsIgnoreCase("map")){
             map();
             return;
         }
@@ -270,7 +270,12 @@ public class game {
     }
 
     private static void createMagicItems() {
+
+        final String fileName = "magicitems.txt";
+
         // Create the list manager for our magic items.
+
+
         listMan magicItems  = new listMan();
         magicItems.setName("Magic Items");
         magicItems.setDesc("These are the magic items.");

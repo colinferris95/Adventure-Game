@@ -31,7 +31,9 @@ public class locationClass {
     }
 
     public void setDesc(String value) {
-        desc = value;
+
+
+       desc = value;
     }
 
     public String getName() {
