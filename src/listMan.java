@@ -33,6 +33,33 @@ public class listMan {
         this.head = head;
     }
 
+    public void add(gameItems item) {
+        // System.out.println("adding " + item.toString());
+        if (this.head == null) {
+            // The list is empty.
+            this.head = item;
+            this.last = item;
+        } else {
+            // The list is NOT empty.
+            this.last.setNext(item);
+            this.last = item;
+
+            // Before:
+            // 1. Move to the end of the list.
+            /*
+            ListItem lastItem = this.head;
+            while (lastItem.getNext() != null) {
+                lastItem = lastItem.getNext();
+            }
+            // 2. Attach the passed-in item to the last item in the list.
+            lastItem.setNext(item);
+            */
+        }
+
+
+
+    }
+
     // Other methods
     @Override
     public String toString() {
@@ -52,6 +79,9 @@ public class listMan {
     //
     private String name;
     private String desc;
-    private gameItems head;
+
+    private gameItems head = null;
+    private gameItems last = null;
+
 
 }

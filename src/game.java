@@ -2,6 +2,7 @@
 //imports
 import java.util.Scanner;
 import java.util.Arrays;
+import java.io.*;
 
 public class game {
 
@@ -17,6 +18,7 @@ public class game {
     public static float gameScore = 0 ; // init game score
     public static float moveCount = 1;// inti move counts
     public static String[] inventory; // creates inventory array
+    public static  int idNum = 6;
 
 
     public static void main(String[] args) {
@@ -271,13 +273,60 @@ public class game {
 
     private static void createMagicItems() {
 
-        final String fileName = "magicitems.txt";
+
+
+        Scanner inputReader = new Scanner(System.in);
+        System.out.print("What item would you like? ");
+        String targetItem = new String();
+        targetItem = inputReader.nextLine();
+        System.out.println();
+
+        final String fileName;
+        fileName = "/Users/cfer/Documents/CMPT/Adventure Game/src/items.txt";
+
+        listMan magicItems  = new listMan();
+
+
+
+        File myFile = new File(fileName);
+        try {
+            Scanner input = new Scanner(myFile);
+            while (input.hasNext()) {
+
+                String itemName = input.nextLine();
+
+
+                gameItems fileItem = new gameItems(idNum);
+                fileItem.setItemName(itemName);
+                fileItem.setCost(Math.random() * 100);
+                fileItem.setNext(null);
+
+
+                magicItems.add(fileItem);
+
+                idNum ++;
+            }
+
+            input.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("File not found. " + ex.toString());
+            createMagicItems();
+        }
+
+        gameItems li = new gameItems(idNum);
+        li = sequentialSearch(magicItems, targetItem);
+        if (li != null) {
+            System.out.println(li.toString());
+        }
+
+
 
         // Create the list manager for our magic items.
 
 
-        listMan magicItems  = new listMan();
-        magicItems.setName("Magic Items");
+
+
+        /*magicItems.setName("Magic Items");
         magicItems.setDesc("These are the magic items.");
         magicItems.setHead(null);
 
@@ -293,10 +342,40 @@ public class game {
         // Link it all up.
         magicItems.setHead(item4);
         item4.setNext(item5);
-        item5.setNext(null);
+        item5.setNext(null);*/
 
 
         System.out.println(magicItems.toString());
+    }
+
+
+    private static gameItems sequentialSearch(listMan lm,
+                                             String target) {
+        gameItems retVal = null;
+        System.out.println("Searching for " + target + ".");
+        int counter = 0;
+        gameItems currentItem = new gameItems(idNum);
+        currentItem = lm.getHead();
+        boolean isFound = false;
+        while ( (!isFound) && (currentItem != null) ) {
+            counter = counter +1;
+            if (currentItem.getItemName().equalsIgnoreCase(target)) {
+                // We found it!
+                isFound = true;
+                retVal = currentItem;
+            } else {
+                // Keep looking.
+                currentItem = currentItem.getNext();
+            }
+        }
+        if (isFound) {
+            System.out.println("Found " + target + " after " + counter + " comparisons.");
+            return  currentItem;
+        } else {
+            System.out.println("Could not find " + target + " in " + counter + " comparisons.");
+        }
+
+        return retVal;
     }
 
     private static void map(){

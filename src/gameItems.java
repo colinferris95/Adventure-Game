@@ -25,6 +25,14 @@ public class gameItems {
         this.desc = desc;
     }
 
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
     public int getLoc() {
         return loc;
     }
@@ -53,5 +61,6 @@ public class gameItems {
     private String itemName;
     private String desc;
     private int loc;
+    private double cost;
     private gameItems next = null;
 }
