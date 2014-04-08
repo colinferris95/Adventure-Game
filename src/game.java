@@ -19,6 +19,7 @@ public class game {
     public static float moveCount = 1;// inti move counts
     public static String[] inventory; // creates inventory array
     public static  int idNum = 4;
+    public static  int id = 4;
     public static double wallet = 0;
 
 
@@ -345,10 +346,15 @@ public class game {
         String next = new String();
         next = input.nextLine();
         System.out.println();
-        if (next == "yes" && wallet >= li.getCost()){
+        if (next.equals("yes")){
+            System.out.println("ok");
             wallet = wallet - li.getCost();
-            inventory[idNum] = li.getItemName();
+            inventory[id] = li.getItemName();
+            id = id + 1;
         } else{
+            System.out.println(wallet);
+            System.out.println(next);
+            System.out.println(li.getCost());
             System.out.println("ok goodbye");
         }
 
