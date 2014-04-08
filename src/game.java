@@ -262,7 +262,9 @@ public class game {
             }
 
             if (locations[currentLoc].getName().equals("Magick Shoppe")){
+
                 createMagicItems();
+
             }
 
         } else if(newLoc == 8){
@@ -274,17 +276,23 @@ public class game {
     private static void createMagicItems() {
 
 
-
+        System.out.print("What item would you like? Or type quit to leave. ");
+        listMan magicItems  = new listMan();
         Scanner inputReader = new Scanner(System.in);
-        System.out.print("What item would you like? ");
+
+
+
         String targetItem = new String();
         targetItem = inputReader.nextLine();
         System.out.println();
 
+        if (targetItem.equalsIgnoreCase("q") || targetItem.equalsIgnoreCase("quit")){
+            return;
+
+        }
+
         final String fileName;
         fileName = "/Users/cfer/Documents/CMPT/Adventure Game/src/items.txt";
-
-        listMan magicItems  = new listMan();
 
 
 
@@ -298,7 +306,7 @@ public class game {
 
                 gameItems fileItem = new gameItems(idNum);
                 fileItem.setItemName(itemName);
-                fileItem.setCost(Math.random() * 100);
+                fileItem.setCost(Math.floor(Math.random() * 100));
                 fileItem.setNext(null);
 
 
@@ -308,17 +316,24 @@ public class game {
             }
 
             input.close();
+            System.out.println(magicItems.toString());
+
+
         } catch (FileNotFoundException ex) {
             System.out.println("File not found. " + ex.toString());
             createMagicItems();
         }
 
+
         gameItems li = new gameItems(idNum);
         li = sequentialSearch(magicItems, targetItem);
+
         if (li != null) {
             System.out.println(li.toString());
+
         }
 
+        createMagicItems();
 
 
         // Create the list manager for our magic items.
@@ -345,7 +360,7 @@ public class game {
         item5.setNext(null);*/
 
 
-        System.out.println(magicItems.toString());
+        //System.out.println(magicItems.toString());
     }
 
 

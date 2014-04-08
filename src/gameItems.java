@@ -51,7 +51,7 @@ public class gameItems {
 
 
     public String toString() {
-        return "[item: id=" + this.id + " name="+ this.itemName + " desc=" + this.desc + "]";
+        return "[item: id=" + this.id + " name="+ this.itemName + " desc=" + this.desc +  " cost " + this.cost + "]";
 
     }
 

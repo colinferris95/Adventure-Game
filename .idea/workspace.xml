@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/magicitems.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gameItems.java" afterPath="$PROJECT_DIR$/src/gameItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/listMan.java" afterPath="$PROJECT_DIR$/src/listMan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,7 +70,7 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="291" column="13" selection-start="8705" selection-end="8705" vertical-scroll-proportion="0.25340137" vertical-offset="4216" max-vertical-offset="6105">
+            <state line="297" column="0" selection-start="8793" selection-end="8793" vertical-scroll-proportion="0.5863192" vertical-offset="4095" max-vertical-offset="6330">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,7 +81,7 @@
       <file leaf-file-name="locationClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/locationClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1020">
+            <state line="16" column="0" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="393" max-vertical-offset="1020">
               <folding>
                 <element signature="e#201#202#0" expanded="true" />
                 <element signature="e#228#229#0" expanded="true" />
@@ -112,7 +109,7 @@
       <file leaf-file-name="gameItems.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameItems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="30" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+            <state line="45" column="5" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="840">
               <folding>
                 <element signature="e#111#112#0" expanded="true" />
                 <element signature="e#136#137#0" expanded="true" />
@@ -172,10 +169,10 @@
         <option value="$PROJECT_DIR$/src/listItem.java" />
         <option value="$PROJECT_DIR$/src/water.java" />
         <option value="$PROJECT_DIR$/src/locationClass.java" />
-        <option value="$PROJECT_DIR$/src/gameItems.java" />
         <option value="$PROJECT_DIR$/src/magicItems.java" />
         <option value="$PROJECT_DIR$/src/listMan.java" />
         <option value="$PROJECT_DIR$/src/items" />
+        <option value="$PROJECT_DIR$/src/gameItems.java" />
         <option value="$PROJECT_DIR$/src/game.java" />
       </list>
     </option>
@@ -560,6 +557,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/listMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1380">
+          <folding>
+            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="5" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="840">
+          <folding>
+            <element signature="e#111#112#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/locationClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
@@ -586,43 +617,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/listMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1380">
-          <folding>
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="30" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="840">
-          <folding>
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="13" selection-start="8705" selection-end="8705" vertical-scroll-proportion="0.25340137" vertical-offset="4216" max-vertical-offset="6105">
+        <state line="297" column="0" selection-start="8793" selection-end="8793" vertical-scroll-proportion="0.5863192" vertical-offset="4095" max-vertical-offset="6330">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
