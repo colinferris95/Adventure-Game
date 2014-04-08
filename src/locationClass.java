@@ -7,8 +7,17 @@ public class locationClass {
     private String desc;
     private String item;
     private boolean hasVisited = false;
+    private int cash;
 
 
+
+    public int getCash() {
+        return cash;
+    }
+
+    public void setCash(int cash) {
+        this.cash = cash;
+    }
 
     public String getItem() {
         return item;

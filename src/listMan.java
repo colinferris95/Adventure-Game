@@ -33,6 +33,8 @@ public class listMan {
         this.head = head;
     }
 
+
+
     public void add(gameItems item) {
         // System.out.println("adding " + item.toString());
         if (this.head == null) {

@@ -25,7 +25,7 @@ public class gameItems {
         this.desc = desc;
     }
 
-    public double getCost() {
+    public  double getCost() {
         return cost;
     }
 

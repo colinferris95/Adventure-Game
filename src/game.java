@@ -18,7 +18,8 @@ public class game {
     public static float gameScore = 0 ; // init game score
     public static float moveCount = 1;// inti move counts
     public static String[] inventory; // creates inventory array
-    public static  int idNum = 6;
+    public static  int idNum = 4;
+    public static double wallet = 0;
 
 
     public static void main(String[] args) {
@@ -54,12 +55,7 @@ public class game {
         item3.setItemName("Knights Helm");
         item3.setLoc(3);
 
-        //magic items
-        gameItems item4 = new gameItems(4);
-        item4.setItemName("Necklace of Trepidation");
 
-        gameItems item5 = new gameItems(5);
-        item5.setItemName("Ring of Chaos");
 
 
 
@@ -67,6 +63,7 @@ public class game {
         loc0.setName("Dungeon");
         loc0.setItem("map");
         loc0.setHasVisited(true);
+        loc0.setCash(25);
 
         locationClass loc1 = new locationClass(1);
         loc1.setName("Cliffside");
@@ -79,6 +76,7 @@ public class game {
         locationClass loc3 = new locationClass(3);
         loc3.setName("treasure");
         loc3.setItem(item3.getItemName());
+        loc3.setCash(25);
 
         locationClass loc4 = new locationClass(4);
         loc4.setName("Gate");
@@ -143,7 +141,9 @@ public class game {
     //updates console output with main game info
     private static void display(){
         System.out.println(locations[currentLoc].getName());
-        System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locations[currentLoc].getItem());
+        System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
+        " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locations[currentLoc].getItem() +
+        " The cash here is " + locations[currentLoc].getCash());
         nextMove();
     }
 
@@ -155,6 +155,11 @@ public class game {
             } else{
                 System.out.println("there is no item here.....");
             }
+        wallet = wallet + locations[currentLoc].getCash();
+        if(locations[currentLoc].getCash() == 0){
+            System.out.println("There is no cash here");
+        }
+        locations[currentLoc].setCash(0);
     }
 
     //ends game by quiting main game loop
@@ -267,6 +272,7 @@ public class game {
 
             }
 
+
         } else if(newLoc == 8){
             System.out.println("you cannot go this way"); //going the wrong way
 
@@ -306,7 +312,7 @@ public class game {
 
                 gameItems fileItem = new gameItems(idNum);
                 fileItem.setItemName(itemName);
-                fileItem.setCost(Math.floor(Math.random() * 100));
+                fileItem.setCost(Math.floor(Math.random() * 50));
                 fileItem.setNext(null);
 
 
@@ -330,8 +336,22 @@ public class game {
 
         if (li != null) {
             System.out.println(li.toString());
-
         }
+
+        System.out.println("Would you like to buy?");
+
+
+        Scanner input = new Scanner(System.in);
+        String next = new String();
+        next = input.nextLine();
+        System.out.println();
+        if (next == "yes" && wallet >= li.getCost()){
+            wallet = wallet - li.getCost();
+            inventory[idNum] = li.getItemName();
+        } else{
+            System.out.println("ok goodbye");
+        }
+
 
         createMagicItems();
 
@@ -384,13 +404,16 @@ public class game {
             }
         }
         if (isFound) {
-            System.out.println("Found " + target + " after " + counter + " comparisons.");
-            return  currentItem;
+
+            System.out.println("Found " + target + " after " + counter + " comparisons." );
+            return currentItem;
         } else {
             System.out.println("Could not find " + target + " in " + counter + " comparisons.");
         }
 
         return retVal;
+
+
     }
 
     private static void map(){
@@ -415,3 +438,14 @@ public class game {
         }
     }
 }
+
+/*
+Scanner inputReader = new Scanner(System.in);
+String next = new String();
+next = inputReader.nextLine();
+        System.out.println();
+        if (next == "yes" && wallet >= currentItem.getCost()){
+        wallet = wallet - currentItem.getCost();
+        } else{
+        System.out.println("ok goodbye");
+        }*/
