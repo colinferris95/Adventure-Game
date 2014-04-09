@@ -8,8 +8,17 @@ public class locationClass {
     private String item;
     private boolean hasVisited = false;
     private int cash;
+    private locationClass next = null;
 
 
+
+    public locationClass getNext() {
+        return next;
+    }
+
+    public void setNext(locationClass next) {
+        this.next = next;
+    }
 
     public int getCash() {
         return cash;

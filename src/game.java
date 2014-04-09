@@ -111,6 +111,41 @@ public class game {
         locations[7] = loc7; //field
         locations[8] = loc8;
 
+        //linked list navigation
+
+        locationListMan locationList = new locationListMan();
+
+        locationClass locale0 = new locationClass(0);
+        loc0.setName("dungeon");
+        locationList.add(locale0);
+
+        locationClass locale1 = new locationClass(0);
+        loc0.setName("Cliffside");
+        locationList.add(locale1);
+
+        locationClass locale2 = new locationClass(0);
+        loc0.setName("forest");
+        locationList.add(locale2);
+
+        locationClass locale3 = new locationClass(0);
+        loc0.setName("treasure");
+        locationList.add(locale3);
+
+        locationClass locale4 = new locationClass(0);
+        loc0.setName("Gate");
+        locationList.add(locale4);
+
+        locationClass locale5 = new locationClass(0);
+        loc0.setName("Magick Shoppe");
+        locationList.add(locale5);
+
+        locationClass locale6 = new locationClass(0);
+        loc0.setName("ocean");
+        locationList.add(locale6);
+
+        locationClass locale7 = new locationClass(0);
+        loc0.setName("Open Field");
+        locationList.add(locale7);
 
         //inventory
         inventory = new String[6];
@@ -437,10 +472,10 @@ public class game {
             System.out.println("               Open Field");
             System.out.println("                 ^");
             System.out.println("                 |");
-            System.out.println("Treasure --->   Gate");
+            System.out.println("$Treasure$ --->   Gate");
             System.out.println("  ^              ^");
             System.out.println("  |              |");
-            System.out.println("Forest  <----- Dungeon ------>  cliffside ------> ocean");
+            System.out.println("Forest  <----- $Dungeon$ ------>  cliffside ------> ocean");
             System.out.println("  |");
             System.out.println("  V");
             System.out.println("Magick Shoppe");
