@@ -111,41 +111,6 @@ public class game {
         locations[7] = loc7; //field
         locations[8] = loc8;
 
-        //linked list navigation
-
-        locationListMan locationList = new locationListMan();
-
-        locationClass locale0 = new locationClass(0);
-        loc0.setName("dungeon");
-        locationList.add(locale0);
-
-        locationClass locale1 = new locationClass(0);
-        loc0.setName("Cliffside");
-        locationList.add(locale1);
-
-        locationClass locale2 = new locationClass(0);
-        loc0.setName("forest");
-        locationList.add(locale2);
-
-        locationClass locale3 = new locationClass(0);
-        loc0.setName("treasure");
-        locationList.add(locale3);
-
-        locationClass locale4 = new locationClass(0);
-        loc0.setName("Gate");
-        locationList.add(locale4);
-
-        locationClass locale5 = new locationClass(0);
-        loc0.setName("Magick Shoppe");
-        locationList.add(locale5);
-
-        locationClass locale6 = new locationClass(0);
-        loc0.setName("ocean");
-        locationList.add(locale6);
-
-        locationClass locale7 = new locationClass(0);
-        loc0.setName("Open Field");
-        locationList.add(locale7);
 
         //inventory
         inventory = new String[6];
@@ -179,7 +144,7 @@ public class game {
         System.out.println(locations[currentLoc].getName());
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
         " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locations[currentLoc].getItem() +
-        " The cash here is " + locations[currentLoc].getCash());
+        " The cash here is " + locations[currentLoc].getCash() );
         nextMove();
     }
 
@@ -229,22 +194,82 @@ public class game {
 
     private static void move(){
 
+
+        //linked list navigation
+
+        locationListMan locationList = new locationListMan();
+
+        locationClass locale0 = new locationClass(0);
+        locale0.setName("dungeon");
+
+        locationList.add(locale0);
+
+        locationClass locale1 = new locationClass(0);
+        locale1.setName("Cliffside");
+        locationList.add(locale1);
+
+        locationClass locale2 = new locationClass(0);
+        locale2.setName("forest");
+        locationList.add(locale2);
+
+        locationClass locale3 = new locationClass(0);
+        locale3.setName("treasure");
+        locationList.add(locale3);
+
+        locationClass locale4 = new locationClass(0);
+        locale4.setName("Gate");
+        locationList.add(locale4);
+
+        locationClass locale5 = new locationClass(0);
+        locale5.setName("Magick Shoppe");
+        locationList.add(locale5);
+
+        locationClass locale6 = new locationClass(0);
+        locale6.setName("ocean");
+        locationList.add(locale6);
+
+        locationClass locale7 = new locationClass(0);
+        locale7.setName("Open Field");
+        locationList.add(locale7);
+
+
+        System.out.println(locationList.getHead());
+        //locationList.setHead(locale0);
+
+
+
+
         if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("north")){
             direction = 0;
+            locale0.setNext(locale4);
+            locale4.setNext(locale7);
+            locale5.setNext(locale2);
+            locale2.setNext(locale3);
 
         }
         else if (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")){
             direction = 1;
-
+            locale7.setNext(locale4);
+            locale4.setNext(locale0);
+            locale3.setNext(locale2);
+            locale2.setNext(locale5);
         }
 
         else if (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("east")){
             direction = 2;
+            locale3.setNext(locale4);
+            locale2.setNext(locale0);
+            locale0.setNext(locale1);
+            locale1.setNext(locale6);
 
         }
 
         else if (input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west")){
             direction = 3;
+            locale6.setNext(locale1);
+            locale1.setNext(locale0);
+            locale0.setNext(locale2);
+            locale4.setNext(locale3);
 
 
         } else if (input.equalsIgnoreCase("h") || input.equalsIgnoreCase("help")){
@@ -279,6 +304,10 @@ public class game {
             System.out.println("I do not understand your query");
         }
 
+
+
+
+
         int newLoc = 0;
 
         if(direction >=0){
@@ -289,6 +318,7 @@ public class game {
 
 
         if (newLoc >= 0 && newLoc < 8 ){ //valid locations
+
             currentLoc = newLoc; //set current player location
              // output to console
             moveCount = moveCount + 1; //add to move count
@@ -314,6 +344,10 @@ public class game {
             System.out.println("you cannot go this way"); //going the wrong way
 
         }
+
+        locationList.setHead(locationList.getHead().getNext());
+        System.out.println(locationList.getHead().getName());
+
     }
 
     private static void createMagicItems() {
@@ -439,6 +473,7 @@ public class game {
         int counter = 0;
         gameItems currentItem = new gameItems(idNum);
         currentItem = lm.getHead();
+
         boolean isFound = false;
         while ( (!isFound) && (currentItem != null) ) {
             counter = counter +1;
