@@ -270,6 +270,7 @@ public class game {
             if (locations[currentLoc].getName().equals("Magick Shoppe")){
 
                 createMagicItems();
+                display();
 
             }
 
@@ -295,6 +296,7 @@ public class game {
 
         if (targetItem.equalsIgnoreCase("q") || targetItem.equalsIgnoreCase("quit")){
             return;
+
 
         }
 
@@ -346,11 +348,16 @@ public class game {
         String next = new String();
         next = input.nextLine();
         System.out.println();
-        if (next.equals("yes")){
+        if (next.equals("yes") && wallet >= li.getCost()){
             System.out.println("ok");
             wallet = wallet - li.getCost();
+            if(id != 6){
             inventory[id] = li.getItemName();
             id = id + 1;
+            }
+                else{
+                System.out.println("your inventory is full");
+            }
         } else{
             System.out.println(wallet);
             System.out.println(next);

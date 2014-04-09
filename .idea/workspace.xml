@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +69,7 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="347" column="29" selection-start="10153" selection-end="10153" vertical-scroll-proportion="0.4258373" vertical-offset="4938" max-vertical-offset="6945">
+            <state line="272" column="26" selection-start="8331" selection-end="8331" vertical-scroll-proportion="0.5933014" vertical-offset="3708" max-vertical-offset="7050">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -631,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="347" column="29" selection-start="10153" selection-end="10153" vertical-scroll-proportion="0.4258373" vertical-offset="4938" max-vertical-offset="6945">
+        <state line="272" column="26" selection-start="8331" selection-end="8331" vertical-scroll-proportion="0.5933014" vertical-offset="3708" max-vertical-offset="7050">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
