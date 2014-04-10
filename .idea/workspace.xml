@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locationListMan.java" afterPath="$PROJECT_DIR$/src/locationListMan.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +70,7 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="19" selection-start="4391" selection-end="4391" vertical-scroll-proportion="-8.28619" vertical-offset="7230" max-vertical-offset="8625">
+            <state line="387" column="0" selection-start="11273" selection-end="11273" vertical-scroll-proportion="-0.37437603" vertical-offset="6030" max-vertical-offset="8550">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -443,7 +443,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="22" width="1679" height="973" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -462,7 +462,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12626563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -650,7 +650,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="19" selection-start="4391" selection-end="4391" vertical-scroll-proportion="-8.28619" vertical-offset="7230" max-vertical-offset="8625">
+        <state line="387" column="0" selection-start="11273" selection-end="11273" vertical-scroll-proportion="-0.37437603" vertical-offset="6030" max-vertical-offset="8550">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

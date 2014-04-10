@@ -22,6 +22,7 @@ public class game {
     public static  int idNum = 4;
     public static  int id = 4;
     public static double wallet = 0;
+    public static boolean isFound;
 
 
     public static void main(String[] args) {
@@ -237,6 +238,9 @@ public class game {
         locale7.setName("Open Field");
         locationList.add(locale7);
 
+        locationClass locale8 = new locationClass(0);
+        locale8.setName("Brick Wall");
+        locationList.add(locale8);
 
         if(currentLocList == "dungeon"){
             locationList.setHead(locale0);
@@ -270,6 +274,10 @@ public class game {
             locationList.setHead(locale7);
         }
 
+        if(currentLocList == "Brick Wall"){
+            locationList.setHead(locale8);
+        }
+
 
 
         if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("north")){
@@ -278,7 +286,6 @@ public class game {
             locale4.setNext(locale7);
             locale5.setNext(locale2);
             locale2.setNext(locale3);
-
 
         }
         else if (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")){
@@ -379,10 +386,16 @@ public class game {
 
         }
 
-        locationList.setHead(locationList.getHead().getNext());
-        System.out.println("linked list  " + locationList.getHead().getName());
-        currentLocList = locationList.getHead().getName();
 
+        if (newLoc >= 0 && newLoc < 8 ){
+
+        locationList.setHead(locationList.getHead().getNext());
+        System.out.println("Your current location is " + locationList.getHead().getName());
+        currentLocList = locationList.getHead().getName();
+        }
+        else{
+            System.out.println("you cannot go this way");
+        }
     }
 
     private static void createMagicItems() {
@@ -445,6 +458,8 @@ public class game {
             System.out.println(li.toString());
         }
 
+
+        if(isFound){
         System.out.println("Would you like to buy?");
 
 
@@ -468,36 +483,14 @@ public class game {
             System.out.println(li.getCost());
             System.out.println("ok goodbye");
         }
-
+    } else{
+            System.out.println("item was not found, bye");
+        }
 
         createMagicItems();
 
 
-        // Create the list manager for our magic items.
 
-
-
-
-        /*magicItems.setName("Magic Items");
-        magicItems.setDesc("These are the magic items.");
-        magicItems.setHead(null);
-
-        // Create some magic items and put them in the list.
-        gameItems item4 = new gameItems(4);
-        item4.setItemName("Necklace of Trepidation");
-        item4.setDesc("this item costs 500 coins");
-
-        gameItems item5 = new gameItems(5);
-        item5.setItemName("Ring of Chaos");
-        item5.setDesc("this item costs 1000 coins");
-
-        // Link it all up.
-        magicItems.setHead(item4);
-        item4.setNext(item5);
-        item5.setNext(null);*/
-
-
-        //System.out.println(magicItems.toString());
     }
 
 
@@ -509,7 +502,7 @@ public class game {
         gameItems currentItem = new gameItems(idNum);
         currentItem = lm.getHead();
 
-        boolean isFound = false;
+        isFound = false;
         while ( (!isFound) && (currentItem != null) ) {
             counter = counter +1;
             if (currentItem.getItemName().equalsIgnoreCase(target)) {
@@ -525,8 +518,10 @@ public class game {
 
             System.out.println("Found " + target + " after " + counter + " comparisons." );
             return currentItem;
+
         } else {
             System.out.println("Could not find " + target + " in " + counter + " comparisons.");
+
         }
 
         return retVal;
