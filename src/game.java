@@ -479,10 +479,10 @@ public class game {
                 System.out.println("your inventory is full");
             }
         } else{
-            System.out.println(wallet);
-            System.out.println(next);
-            System.out.println(li.getCost());
-            System.out.println("ok goodbye");
+            System.out.println("your wallet" + wallet);
+
+            System.out.println("item cost" + li.getCost());
+            System.out.println("you dont have enough money, goodbye");
         }
     } else{
             System.out.println("item was not found, bye");
