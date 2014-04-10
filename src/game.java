@@ -12,6 +12,7 @@ public class game {
     public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
     public static int  currentLoc = 0; // the current location of the player
+    public static String currentLocList;
     public static boolean playFlag = true; // bool flag for game status
     public static String input; // player input
     public static int direction  ; // player inputed direction
@@ -121,7 +122,9 @@ public class game {
         inventory[4] = null;// magic item
         inventory[5] = null;// magic item
 
+
         // two dimensional matrix
+
         locMatrix = new int[][] {
                 //N  S  E  W
                 {4, 8, 1, 2},   //Dungeon cell
@@ -192,6 +195,8 @@ public class game {
         input = inputReader.nextLine();  // command is global.
     }
 
+
+
     private static void move(){
 
 
@@ -233,9 +238,37 @@ public class game {
         locationList.add(locale7);
 
 
-        System.out.println(locationList.getHead());
-        //locationList.setHead(locale0);
+        if(currentLocList == "dungeon"){
+            locationList.setHead(locale0);
+        }
 
+        if(currentLocList == "Cliffside"){
+            locationList.setHead(locale1);
+        }
+
+        if(currentLocList == "forest"){
+            locationList.setHead(locale2);
+        }
+
+        if(currentLocList == "treasure"){
+            locationList.setHead(locale3);
+        }
+
+        if(currentLocList == "Gate"){
+            locationList.setHead(locale4);
+        }
+
+        if(currentLocList == "Magick Shoppe"){
+            locationList.setHead(locale5);
+        }
+
+        if(currentLocList == "ocean"){
+            locationList.setHead(locale6);
+        }
+
+        if(currentLocList == "Open Field"){
+            locationList.setHead(locale7);
+        }
 
 
 
@@ -245,6 +278,7 @@ public class game {
             locale4.setNext(locale7);
             locale5.setNext(locale2);
             locale2.setNext(locale3);
+
 
         }
         else if (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")){
@@ -346,7 +380,8 @@ public class game {
         }
 
         locationList.setHead(locationList.getHead().getNext());
-        System.out.println(locationList.getHead().getName());
+        System.out.println("linked list  " + locationList.getHead().getName());
+        currentLocList = locationList.getHead().getName();
 
     }
 

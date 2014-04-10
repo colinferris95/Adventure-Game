@@ -12,16 +12,16 @@ public class locationListMan {
         this.head = head;
     }
 
-    public void add(locationClass item) {
+    public void add(locationClass location) {
 
         if (this.head == null) {
 
-            this.head = item;
-            this.last = item;
+            this.head = location;
+            this.last = location;
         } else {
 
-            this.last.setNext(item);
-            this.last = item;
+            this.last.setNext(location);
+            this.last = location;
 
 
         }
