@@ -294,6 +294,7 @@ public class game {
             locale4.setNext(locale0);
             locale3.setNext(locale2);
             locale2.setNext(locale5);
+            locale5.setNext(locale8);
         }
 
         else if (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("east")){
@@ -387,7 +388,7 @@ public class game {
         }
 
 
-        if (newLoc >= 0 && newLoc < 8 ){
+        if (locationList.getHead().getId() >= 0 && locationList.getHead().getNext().getName() != "Brick Wall" ){
 
         locationList.setHead(locationList.getHead().getNext());
         System.out.println("Your current location is " + locationList.getHead().getName());
@@ -552,13 +553,3 @@ public class game {
     }
 }
 
-/*
-Scanner inputReader = new Scanner(System.in);
-String next = new String();
-next = inputReader.nextLine();
-        System.out.println();
-        if (next == "yes" && wallet >= currentItem.getCost()){
-        wallet = wallet - currentItem.getCost();
-        } else{
-        System.out.println("ok goodbye");
-        }*/
