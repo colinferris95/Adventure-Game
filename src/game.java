@@ -11,7 +11,7 @@ public class game {
     public static locationClass[] locations; // game locations
     public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
-    public static int  currentLoc = 0; // the current location of the player
+    public static String  currentLoc = "Dungeon"; // the current location of the player
     public static String currentLocList;
     public static boolean playFlag = true; // bool flag for game status
     public static String input; // player input
@@ -126,6 +126,8 @@ public class game {
 
         // two dimensional matrix
 
+        /*
+
         locMatrix = new int[][] {
                 //N  S  E  W
                 {4, 8, 1, 2},   //Dungeon cell
@@ -138,21 +140,24 @@ public class game {
                 {8, 4, 8, 8}   //open field
         };
 
-
+        */
 
     }
 
 
     //updates console output with main game info
     private static void display(){
-        System.out.println(locations[currentLoc].getName());
+        System.out.println(currentLoc);
+        /*
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
         " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locations[currentLoc].getItem() +
         " The cash here is " + locations[currentLoc].getCash() );
-        nextMove();
+        //nextMove();
+        */
     }
 
     //allows players to pick up items into their inventory
+    /*
     private static void takeItem(){
             if (locations[currentLoc].getItem() != null){
                 inventory[locations[currentLoc].getId()] = locations[currentLoc].getItem();
@@ -189,6 +194,7 @@ public class game {
         }
 
     }
+    */
     //creates player input from text console
     private static void getCommand() {
 
@@ -330,12 +336,12 @@ public class game {
         }
 
         else if (input.equalsIgnoreCase("t") || input.equalsIgnoreCase("take")){
-            takeItem();
+            //takeItem();
             return;
         }
 
         else if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")){
-            quitGame();
+            //quitGame();
             return;
         } else if (input.equalsIgnoreCase("m") || input.equalsIgnoreCase("map")){
             map();
@@ -350,31 +356,34 @@ public class game {
 
 
 
-        int newLoc = 0;
+        String newLoc = "";
 
         if(direction >=0){
-         newLoc = locMatrix[currentLoc][direction];
+          newLoc = locationList.getHead().getName();
+            System.out.println("newloc =  " + newLoc);
         } else{
             System.out.println("something went wrong, ill get back to this");
         }
 
 
-        if (newLoc >= 0 && newLoc < 8 ){ //valid locations
+        if (newLoc.equals("Brick Wall") == false ){ //valid locations
 
-            currentLoc = newLoc; //set current player location
+            //currentLoc = newLoc; //set current player location
              // output to console
             moveCount = moveCount + 1; //add to move count
 
-            if (locations[currentLoc].getHasVisited() == false ){
-                locations[currentLoc].setHasVisited(true);
+            if (locationList.getHead().getHasVisited() == false ){
+                locationList.getHead().setHasVisited(true);
                 gameScore = gameScore + 5;
+                //locationList.setHead(locationList.getHead().getNext());
+                currentLoc =locationList.getHead().getNext().getName();
                 System.out.println("you have found a new location");
                 display();
             } else{
                 display();
             }
 
-            if (locations[currentLoc].getName().equals("Magick Shoppe")){
+            if (locationList.getHead().getName().equals("Magick Shoppe")){
 
                 createMagicItems();
                 display();
@@ -382,7 +391,7 @@ public class game {
             }
 
 
-        } else if(newLoc == 8){
+        } else if(newLoc == "Brick Wall"){
             System.out.println("you cannot go this way"); //going the wrong way
 
         }
@@ -397,6 +406,7 @@ public class game {
         else{
             System.out.println("you cannot go this way");
         }
+
     }
 
     private static void createMagicItems() {

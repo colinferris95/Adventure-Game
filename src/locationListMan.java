@@ -3,7 +3,15 @@ public class locationListMan {
 
     private locationClass head = null;
     private locationClass last = null;
+    private boolean hasVisited = false;
 
+    public boolean getHasVisited() {
+        return hasVisited;
+    }
+
+    public void setHasVisited(boolean hasVisited) {
+        this.hasVisited = hasVisited;
+    }
 
     public locationClass getHead() {
         return head;
