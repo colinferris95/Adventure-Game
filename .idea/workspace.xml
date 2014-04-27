@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locationListMan.java" afterPath="$PROJECT_DIR$/src/locationListMan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +69,9 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="383" column="13" selection-start="11306" selection-end="11306" vertical-scroll-proportion="0.45918366" vertical-offset="5475" max-vertical-offset="8565">
+            <state line="359" column="0" selection-start="10342" selection-end="10342" vertical-scroll-proportion="8.960067" vertical-offset="0" max-vertical-offset="8715">
               <folding>
+                <element signature="e#0#16540#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -165,7 +164,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1200" />
+    <option name="width" value="1678" />
     <option name="height" value="973" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -397,8 +396,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1200" height="973" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1678" height="973" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -416,7 +415,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22526817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -450,6 +449,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
+            <element signature="e#0#16540#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -508,6 +508,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
+            <element signature="e#0#16540#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -566,6 +567,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="262" column="28" selection-start="7963" selection-end="7963" vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="4710">
           <folding>
+            <element signature="e#0#16540#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -655,8 +657,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="383" column="13" selection-start="11306" selection-end="11306" vertical-scroll-proportion="0.45918366" vertical-offset="5475" max-vertical-offset="8565">
+        <state line="359" column="0" selection-start="10342" selection-end="10342" vertical-scroll-proportion="8.960067" vertical-offset="0" max-vertical-offset="8715">
           <folding>
+            <element signature="e#0#16540#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

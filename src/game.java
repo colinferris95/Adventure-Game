@@ -1,3 +1,11 @@
+//TO DO LIST:
+/*
+modulate code
+polish up linked list navigation
+project 4 objectives
+ */
+
+
 
 //imports
 import java.util.Scanner;
@@ -12,6 +20,7 @@ public class game {
     public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
     public static String  currentLoc = "Dungeon"; // the current location of the player
+    public static String locItem = "";
     public static String currentLocList;
     public static boolean playFlag = true; // bool flag for game status
     public static String input; // player input
@@ -61,7 +70,7 @@ public class game {
 
 
 
-
+        /*
         locationClass loc0 = new locationClass(0);
         loc0.setName("Dungeon");
         loc0.setItem("map");
@@ -112,6 +121,7 @@ public class game {
         locations[6] = loc6; //ocean
         locations[7] = loc7; //field
         locations[8] = loc8;
+        */
 
 
         //inventory
@@ -148,12 +158,12 @@ public class game {
     //updates console output with main game info
     private static void display(){
         System.out.println(currentLoc);
-        /*
+
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
-        " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locations[currentLoc].getItem() +
-        " The cash here is " + locations[currentLoc].getCash() );
+        " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locItem +
+        " The cash here is "  );
         //nextMove();
-        */
+
     }
 
     //allows players to pick up items into their inventory
@@ -213,7 +223,7 @@ public class game {
 
         locationClass locale0 = new locationClass(0);
         locale0.setName("dungeon");
-
+        locale0.setItem("map");
         locationList.add(locale0);
 
         locationClass locale1 = new locationClass(0);
@@ -354,7 +364,7 @@ public class game {
 
 
 
-
+        locItem = locationList.getHead().getNext().getItem();
 
         String newLoc = "";
 
