@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/takeItem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locationListMan.java" afterPath="$PROJECT_DIR$/src/locationListMan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,9 +69,8 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="6" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.6738769" vertical-offset="1170" max-vertical-offset="7650">
+            <state line="3" column="14" selection-start="45" selection-end="45" vertical-scroll-proportion="0.074875206" vertical-offset="0" max-vertical-offset="7650">
               <folding>
-                <element signature="e#0#14505#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -476,7 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="359" column="0" selection-start="10342" selection-end="10342" vertical-scroll-proportion="0.0" vertical-offset="5385" max-vertical-offset="8715">
           <folding>
-            <element signature="e#0#14505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -533,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
-            <element signature="e#0#14505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -590,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
-            <element signature="e#0#14505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -647,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="262" column="28" selection-start="7963" selection-end="7963" vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="4710">
           <folding>
-            <element signature="e#0#14505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -747,9 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="6" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.6738769" vertical-offset="1170" max-vertical-offset="7650">
+        <state line="3" column="14" selection-start="45" selection-end="45" vertical-scroll-proportion="0.074875206" vertical-offset="0" max-vertical-offset="7650">
           <folding>
-            <element signature="e#0#14505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

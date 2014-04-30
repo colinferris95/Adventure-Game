@@ -1,7 +1,7 @@
 //TO DO LIST:
 /*
 modulate code
-polish up linked list navigation
+fix next moves
 project 4 objectives
  */
 
@@ -322,7 +322,7 @@ public class game {
                 display();
             }
 
-            if (locationList.getHead().getName().equals("Magick Shoppe")){
+            if (locationList.getHead().getNext().getName().equals("Magick Shoppe")){
 
                 createMagicItems();
                 display();
