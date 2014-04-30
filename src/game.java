@@ -20,7 +20,7 @@ public class game {
     public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
     public static String  currentLoc = "Dungeon"; // the current location of the player
-    public static String locItem = "";
+    public static String locItem = "map";
     public static String currentLocList;
     public static boolean playFlag = true; // bool flag for game status
     public static String input; // player input
@@ -50,78 +50,7 @@ public class game {
 
     //creates main game objects
     private static void run(){
-        //items
-        gameItems item0 = new gameItems(0);
-        item0.setItemName("Sword of justice");
-        item0.setLoc(0);
 
-        gameItems item1 = new gameItems(1);
-        item1.setItemName("Staff of peril");
-        item1.setLoc(1);
-
-        gameItems item2 = new gameItems(2);
-        item2.setItemName("Gray Shield");
-        item2.setLoc(2);
-
-        gameItems item3 = new gameItems(3);
-        item3.setItemName("Knights Helm");
-        item3.setLoc(3);
-
-
-
-
-        /*
-        locationClass loc0 = new locationClass(0);
-        loc0.setName("Dungeon");
-        loc0.setItem("map");
-        loc0.setHasVisited(true);
-        loc0.setCash(25);
-
-        locationClass loc1 = new locationClass(1);
-        loc1.setName("Cliffside");
-        loc1.setItem(item1.getItemName());
-
-        locationClass loc2 = new locationClass(2);
-        loc2.setName("forest");
-        loc2.setItem(item2.getItemName());
-
-        locationClass loc3 = new locationClass(3);
-        loc3.setName("treasure");
-        loc3.setItem(item3.getItemName());
-        loc3.setCash(25);
-
-        locationClass loc4 = new locationClass(4);
-        loc4.setName("Gate");
-        loc4.setItem(item0.getItemName());
-
-        locationClass loc5 = new locationClass(5);
-        loc5.setName("Magick Shoppe");
-
-
-        water loc6 = new water(6);
-        loc6.setName("ocean");
-        loc6.setWater("water is here");
-
-        locationClass loc7 = new locationClass(7);
-        loc7.setName("Open Field");
-
-        locationClass loc8 = new locationClass(8);
-        loc8.setName("the nether");
-
-
-
-        locations = new locationClass[9];
-
-        locations[0] = loc0; //Dungeon cell
-        locations[1] = loc1; //cliff
-        locations[2] = loc2; //forest
-        locations[3] = loc3; //treasure
-        locations[4] = loc4; //gate
-        locations[5] = loc5; //magick shoppe
-        locations[6] = loc6; //ocean
-        locations[7] = loc7; //field
-        locations[8] = loc8;
-        */
 
 
         //inventory
@@ -134,23 +63,7 @@ public class game {
         inventory[5] = null;// magic item
 
 
-        // two dimensional matrix
 
-        /*
-
-        locMatrix = new int[][] {
-                //N  S  E  W
-                {4, 8, 1, 2},   //Dungeon cell
-                {8, 8, 6, 0},  // cliffside
-                {3, 5, 0, 8},  //forest
-                {8, 2, 4, 8},   //treasure
-                {7, 0, 8, 3},  //gate
-                {2, 8, 8, 8},   //magick shoppe
-                {8, 8, 8, 1 },   //ocean
-                {8, 4, 8, 8}   //open field
-        };
-
-        */
 
     }
 
@@ -165,28 +78,14 @@ public class game {
         //nextMove();
 
     }
-
-    //allows players to pick up items into their inventory
-    /*
-    private static void takeItem(){
-            if (locations[currentLoc].getItem() != null){
-                inventory[locations[currentLoc].getId()] = locations[currentLoc].getItem();
-                System.out.println("you took an item");
-            } else{
-                System.out.println("there is no item here.....");
-            }
-        wallet = wallet + locations[currentLoc].getCash();
-        if(locations[currentLoc].getCash() == 0){
-            System.out.println("There is no cash here");
-        }
-        locations[currentLoc].setCash(0);
-    }
-
     //ends game by quiting main game loop
     private static void quitGame(){
         playFlag = false;
         return;
     }
+
+
+    /*
 
     // shows players possible moves
     private static void nextMove(){
@@ -205,6 +104,7 @@ public class game {
 
     }
     */
+
     //creates player input from text console
     private static void getCommand() {
 
@@ -214,7 +114,22 @@ public class game {
 
 
 
-    private static void move(){
+    public static void move(){
+        gameItems item0 = new gameItems(0);
+        item0.setItemName("Sword of justice");
+        item0.setLoc(0);
+
+        gameItems item1 = new gameItems(1);
+        item1.setItemName("Staff of peril");
+        item1.setLoc(1);
+
+        gameItems item2 = new gameItems(2);
+        item2.setItemName("Gray Shield");
+        item2.setLoc(2);
+
+        gameItems item3 = new gameItems(3);
+        item3.setItemName("Knights Helm");
+        item3.setLoc(3);
 
 
         //linked list navigation
@@ -224,11 +139,15 @@ public class game {
         locationClass locale0 = new locationClass(0);
         locale0.setName("dungeon");
         locale0.setItem("map");
+        locale0.setCash(25);
         locationList.add(locale0);
 
         locationClass locale1 = new locationClass(0);
         locale1.setName("Cliffside");
+        locale1.setItem(item1.getItemName());
+        locale1.setCash(25);
         locationList.add(locale1);
+
 
         locationClass locale2 = new locationClass(0);
         locale2.setName("forest");
@@ -346,7 +265,17 @@ public class game {
         }
 
         else if (input.equalsIgnoreCase("t") || input.equalsIgnoreCase("take")){
-            //takeItem();
+            if (locItem != null){
+                inventory[locationList.getHead().getId()] = locItem;
+                System.out.println("you took an item");
+            } else{
+                System.out.println("there is no item here.....");
+            }
+            wallet = wallet + locationList.getHead().getCash();
+            if(locationList.getHead().getCash() == 0){
+                System.out.println("There is no cash here");
+            }
+            locationList.getHead().setCash(0);
             return;
         }
 
