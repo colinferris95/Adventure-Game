@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d3ed351-aad3-4d4e-a1f7-ae323b00b4a9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/locationStack.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Adventure Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,9 +71,24 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="14" selection-start="45" selection-end="45" vertical-scroll-proportion="0.074875206" vertical-offset="0" max-vertical-offset="7650">
+            <state line="457" column="32" selection-start="12940" selection-end="12940" vertical-scroll-proportion="0.33904108" vertical-offset="6558" max-vertical-offset="8175">
               <folding>
+                <element signature="e#0#15341#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="locationStack.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/locationStack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="27" selection-start="1114" selection-end="1114" vertical-scroll-proportion="-32.307693" vertical-offset="0" max-vertical-offset="1095">
+              <folding>
+                <element signature="e#866#867#0" expanded="true" />
+                <element signature="e#897#898#0" expanded="true" />
+                <element signature="e#942#943#0" expanded="true" />
+                <element signature="e#982#983#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,9 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/takeItem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="2" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <folding>
-                <element signature="e#0#464#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,7 +154,7 @@
       <file leaf-file-name="water.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/water.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="525">
+            <state line="29" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -167,6 +182,7 @@
         <option value="$PROJECT_DIR$/src/locationClass.java" />
         <option value="$PROJECT_DIR$/src/locationListMan.java" />
         <option value="$PROJECT_DIR$/src/takeItem.java" />
+        <option value="$PROJECT_DIR$/src/locationStack.java" />
         <option value="$PROJECT_DIR$/src/game.java" />
       </list>
     </option>
@@ -439,7 +455,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -472,6 +488,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="359" column="0" selection-start="10342" selection-end="10342" vertical-scroll-proportion="0.0" vertical-offset="5385" max-vertical-offset="8715">
           <folding>
+            <element signature="e#0#15341#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -528,6 +545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
+            <element signature="e#0#15341#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -584,6 +602,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
+            <element signature="e#0#15341#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -640,6 +659,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="262" column="28" selection-start="7963" selection-end="7963" vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="4710">
           <folding>
+            <element signature="e#0#15341#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -681,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/water.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameItems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="4" selection-start="1095" selection-end="1125" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="840">
@@ -721,26 +734,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/listMan.java">
+    <entry file="file://$PROJECT_DIR$/src/takeItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1275">
+        <state line="15" column="2" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/takeItem.java">
+    <entry file="file://$PROJECT_DIR$/src/water.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="2" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+        <state line="29" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/listMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locationStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="27" selection-start="1114" selection-end="1114" vertical-scroll-proportion="-32.307693" vertical-offset="0" max-vertical-offset="1095">
           <folding>
-            <element signature="e#0#464#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="45" selection-end="45" vertical-scroll-proportion="0.074875206" vertical-offset="0" max-vertical-offset="7650">
+        <state line="457" column="32" selection-start="12940" selection-end="12940" vertical-scroll-proportion="0.33904108" vertical-offset="6558" max-vertical-offset="8175">
           <folding>
+            <element signature="e#0#15341#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

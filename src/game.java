@@ -19,7 +19,7 @@ public class game {
     public static locationClass[] locations; // game locations
     public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
-    public static String  currentLoc = "Dungeon"; // the current location of the player
+    public static String  currentLoc = "dungeon"; // the current location of the player
     public static String locItem = "map";
     public static String currentLocList;
     public static boolean playFlag = true; // bool flag for game status
@@ -70,6 +70,7 @@ public class game {
 
     //updates console output with main game info
     private static void display(){
+        locationStackTester();
         System.out.println(currentLoc);
 
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
@@ -89,7 +90,7 @@ public class game {
 
     // shows players possible moves
     private static void nextMove(){
-        if (locMatrix[currentLoc][0] != 8){
+        if (! currentLoc.equals("Brick Wall")){
             System.out.println("you can move north");
         }
         if (locMatrix[currentLoc][1] != 8){
@@ -442,6 +443,40 @@ public class game {
 
 
     }
+
+    private static void locationStackTester() {
+
+        System.out.println("Stack tester.");
+
+        locationStack myStack = new locationStack();
+        myStack.setCAPACITY(Math.round(moveCount));
+
+        System.out.println(myStack.getCAPACITY());
+
+        try {
+            if(currentLoc.equals("dungeon")){
+                myStack.push(0);
+
+            }
+        } catch (Exception ex) {
+            System.out.println("Caught exception: " + ex.getMessage());
+        }
+
+        System.out.println(myStack.isEmpty());
+
+        try {
+            if(myStack.pop() == 0){
+                System.out.println("dungeon");
+            }
+        } catch (Exception ex) {
+            System.out.println("Caught exception: " + ex.getMessage());
+        }
+
+        System.out.println(myStack.isEmpty());
+
+    }
+
+
 
 
     private static gameItems sequentialSearch(listMan lm,
