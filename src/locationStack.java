@@ -55,7 +55,7 @@ public class locationStack  {
     //
     // Private
     //
-    private int CAPACITY = 1;
+    private int CAPACITY = 1000;
     private int[] arr = new int[CAPACITY];
     private int topPtr = 0;
 

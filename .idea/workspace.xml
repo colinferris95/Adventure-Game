@@ -71,8 +71,9 @@
       <file leaf-file-name="game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="26" selection-start="72" selection-end="72" vertical-scroll-proportion="0.10619469" vertical-offset="0" max-vertical-offset="9000">
+            <state line="507" column="51" selection-start="14446" selection-end="14446" vertical-scroll-proportion="0.35885167" vertical-offset="7380" max-vertical-offset="9225">
               <folding>
+                <element signature="e#0#17475#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -82,7 +83,7 @@
       <file leaf-file-name="locationStack.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/locationStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="22" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1080">
+            <state line="26" column="33" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -170,9 +171,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="643" />
+    <option name="x" value="4" />
     <option name="y" value="22" />
-    <option name="width" value="1037" />
+    <option name="width" value="1676" />
     <option name="height" value="973" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -424,7 +425,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="643" y="22" width="1037" height="973" extended-state="6" />
+    <frame x="4" y="22" width="1676" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -443,8 +444,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.026036644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17124104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27544248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -481,6 +482,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="457" column="32" selection-start="12940" selection-end="12940" vertical-scroll-proportion="0.0" vertical-offset="6558" max-vertical-offset="8175">
           <folding>
+            <element signature="e#0#17475#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -539,6 +541,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="359" column="0" selection-start="10342" selection-end="10342" vertical-scroll-proportion="0.0" vertical-offset="5385" max-vertical-offset="8715">
           <folding>
+            <element signature="e#0#17475#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -583,6 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
+            <element signature="e#0#17475#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -627,6 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="9" selection-start="14028" selection-end="14028" vertical-scroll-proportion="0.0" vertical-offset="6765" max-vertical-offset="8415">
           <folding>
+            <element signature="e#0#17475#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -671,6 +676,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="262" column="28" selection-start="7963" selection-end="7963" vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="4710">
           <folding>
+            <element signature="e#0#17475#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -748,15 +754,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locationStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="22" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1080">
+        <state line="26" column="33" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="72" selection-end="72" vertical-scroll-proportion="0.10619469" vertical-offset="0" max-vertical-offset="9000">
+        <state line="507" column="51" selection-start="14446" selection-end="14446" vertical-scroll-proportion="0.35885167" vertical-offset="7380" max-vertical-offset="9225">
           <folding>
+            <element signature="e#0#17475#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

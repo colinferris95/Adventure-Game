@@ -72,12 +72,11 @@ public class game {
 
     //updates console output with main game info
     private static void display(){
-        //locationStackTester();
-
+        locationStackTester();
+        System.out.println("end of stack test");
 
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
-        " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locItem +
-        " The cash here is "  );
+        " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locItem   );
         System.out.println(currentLoc);
         //nextMove();
 
@@ -225,6 +224,10 @@ public class game {
             locale4.setNext(locale7);
             locale5.setNext(locale2);
             locale2.setNext(locale3);
+            locale3.setNext(locale8);
+            locale1.setNext(locale8);
+            locale7.setNext(locale8);
+            locale6.setNext(locale8);
 
         }
         else if (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")){
@@ -234,6 +237,9 @@ public class game {
             locale3.setNext(locale2);
             locale2.setNext(locale5);
             locale5.setNext(locale8);
+            locale0.setNext(locale8);
+            locale1.setNext(locale8);
+            locale6.setNext(locale8);
         }
 
         else if (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("east")){
@@ -242,6 +248,10 @@ public class game {
             locale2.setNext(locale0);
             locale0.setNext(locale1);
             locale1.setNext(locale6);
+            locale6.setNext(locale8);
+            locale5.setNext(locale8);
+            locale4.setNext(locale8);
+            locale7.setNext(locale8);
 
         }
 
@@ -250,6 +260,9 @@ public class game {
             locale6.setNext(locale1);
             locale1.setNext(locale0);
             locale0.setNext(locale2);
+            locale3.setNext(locale8);
+            locale2.setNext(locale8);
+            locale5.setNext(locale8);
 
 
 
@@ -452,7 +465,9 @@ public class game {
         System.out.println("Stack tester.");
 
         locationStack myStack = new locationStack();
-        myStack.setCAPACITY(Math.round(moveCount));
+
+
+
 
         System.out.println(myStack.getCAPACITY());
 
@@ -460,10 +475,10 @@ public class game {
 
             if(currentLoc.equals("dungeon")){
                 myStack.push(0);
-                }
+            }
             else if(currentLoc.equals("Cliffside")){
                 myStack.push(1);
-                }
+            }
             else if(currentLoc.equals("forest")){
                 myStack.push(2);
             }
@@ -489,9 +504,9 @@ public class game {
         System.out.println(myStack.isEmpty());
 
         try {
-            System.out.println(myStack.pop());
-            System.out.println(myStack.pop());
-            System.out.println(myStack.pop());
+            for(int i = 0; i < moveCount; i++){
+                System.out.println( myStack.pop());
+            }
 
             /*
             for(int i = 0; i < moveCount; i++){
