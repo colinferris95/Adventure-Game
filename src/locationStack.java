@@ -7,27 +7,30 @@ public class locationStack  {
         init();
     }
 
-    public void push(int item) {
+    public void push(int item) throws Exception{
         // Check for stack overflow.
         if (topPtr > 0) {
             topPtr = topPtr - 1;
             arr[topPtr] = item;
         } else {
+            Exception overflow = new Exception("Stack Overflow");
+            throw overflow;
 
 
         }
     }
 
-    public int pop(){
+    public int pop() throws Exception{
         int retVal = 0;
         // Check for stack underflow.
         if (topPtr < CAPACITY) {
             retVal = arr[topPtr];
             topPtr = topPtr + 1;
         } else {
-            // In case of underflow, return -1.
-            // TODO: Throw an underflow exception.
             retVal = -1;
+            Exception underflow = new Exception("Stack Underflow");
+            throw underflow;
+
         }
         return retVal;
     }
