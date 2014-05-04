@@ -33,7 +33,8 @@ public class game {
     public static  int id = 4;
     public static double wallet = 0;
     public static boolean isFound;
-    public static int popped;
+    public static boolean stackPop = false;
+    public static locationStack myStack = new locationStack();
 
 
     public static void main(String[] args) {
@@ -73,6 +74,7 @@ public class game {
     //updates console output with main game info
     private static void display(){
         locationStackTester();
+
         System.out.println("end of stack test");
 
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
@@ -295,7 +297,11 @@ public class game {
             locationList.getHead().setCash(0);
             return;
         }
-
+        else if(input.equalsIgnoreCase("stack")){
+        stackPop = true;
+        locationStackTester();
+        return;
+        }
         else if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")){
             //quitGame();
             return;
@@ -464,15 +470,10 @@ public class game {
 
         System.out.println("Stack tester.");
 
-        locationStack myStack = new locationStack();
-
-
-
-
-        System.out.println(myStack.getCAPACITY());
-
+        if (stackPop == false){
         try {
-
+            System.out.println("adding to stack");
+            System.out.println(currentLoc);
             if(currentLoc.equals("dungeon")){
                 myStack.push(0);
             }
@@ -500,49 +501,26 @@ public class game {
         }catch (Exception ex) {
             System.out.println("Caught exception: " + ex.getMessage());
         }
-
-        System.out.println(myStack.isEmpty());
-
-        try {
-            for(int i = 0; i < moveCount; i++){
-                System.out.println( myStack.pop());
-            }
-
-            /*
-            for(int i = 0; i < moveCount; i++){
-                 popped = myStack.pop();
-            }
-            if(popped == 0){
-                System.out.println("dungeon");
-                }
-            else if(popped == 1){
-                System.out.println("Cliffside");
-                }
-            else if(popped == 2){
-                System.out.println("forest");
-            }
-            else if(popped == 3){
-                System.out.println("treasure");
-            }
-            else if(popped == 4){
-                System.out.println("Gate");
-            }
-            else if(popped == 5){
-                System.out.println("Magick Shoppe");
-            }
-            else if(popped == 6){
-                System.out.println("ocean");
-            }
-            else if(popped == 7){
-                System.out.println("Open Field");
-            }
-            */
-        } catch (Exception ex) {
-            System.out.println("Caught exception: " + ex.getMessage());
         }
 
         System.out.println(myStack.isEmpty());
 
+        if(stackPop == true){
+
+
+            try {
+
+                for(int i = 0; i < moveCount; i++){
+                    System.out.println(myStack.pop());
+                }
+
+            }
+            catch (Exception ex) {
+                System.out.println("Caught exception: " + ex.getMessage());
+            }
+
+            System.out.println(myStack.isEmpty());
+        }
 
     }
 

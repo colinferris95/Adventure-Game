@@ -26,11 +26,6 @@ public class locationStack  {
         if (topPtr < CAPACITY) {
             retVal = arr[topPtr];
             topPtr = topPtr + 1;
-        } else {
-            retVal = -1;
-            Exception underflow = new Exception("Stack Underflow");
-            throw underflow;
-
         }
         return retVal;
     }
