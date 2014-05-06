@@ -34,7 +34,9 @@ public class game {
     public static double wallet = 0;
     public static boolean isFound;
     public static boolean stackPop = false;
+    public static boolean tryQueue = false;
     public static locationStack myStack = new locationStack();
+    public static locationQueue myQueue = new locationQueue();
 
 
     public static void main(String[] args) {
@@ -74,6 +76,7 @@ public class game {
     //updates console output with main game info
     private static void display(){
         locationStackTester();
+        locationQueueTester();
 
         System.out.println("end of stack test");
 
@@ -90,25 +93,7 @@ public class game {
     }
 
 
-    /*
 
-    // shows players possible moves
-    private static void nextMove(){
-        if (! currentLoc.equals("Brick Wall")){
-            System.out.println("you can move north");
-        }
-        if (locMatrix[currentLoc][1] != 8){
-            System.out.println("you can move south");
-        }
-        if (locMatrix[currentLoc][2] != 8){
-            System.out.println("you can move east");
-        }
-        if (locMatrix[currentLoc][3] != 8){
-            System.out.println("you can move west");
-        }
-
-    }
-    */
 
     //creates player input from text console
     private static void getCommand() {
@@ -301,6 +286,11 @@ public class game {
         stackPop = true;
         locationStackTester();
         return;
+        }
+        else if(input.equalsIgnoreCase("queue")){
+            tryQueue = true;
+            locationQueueTester();
+            return;
         }
         else if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")){
             //quitGame();
@@ -520,6 +510,65 @@ public class game {
             }
 
             System.out.println(myStack.isEmpty());
+        }
+
+    }
+
+
+    private static void locationQueueTester() {
+
+        System.out.println("Queue tester.");
+
+        if (tryQueue == false){
+            try {
+                System.out.println("adding to Queue");
+                System.out.println(currentLoc);
+                if(currentLoc.equals("dungeon")){
+                    myQueue.enqueue(0);
+                }
+                else if(currentLoc.equals("Cliffside")){
+                    myQueue.enqueue(1);
+                }
+                else if(currentLoc.equals("forest")){
+                    myQueue.enqueue(2);
+                }
+                else if(currentLoc.equals("treasure")){
+                    myQueue.enqueue(3);
+                }
+                else if(currentLoc.equals("Gate")){
+                    myQueue.enqueue(4);
+                }
+                else if(currentLoc.equals("Magick Shoppe")){
+                    myQueue.enqueue(5);
+                }
+                else if(currentLoc.equals("ocean")){
+                    myQueue.enqueue(6);
+                }
+                else if(currentLoc.equals("Open Field")){
+                    myQueue.enqueue(7);
+                }
+            }catch (Exception ex) {
+                System.out.println("Caught exception: " + ex.getMessage());
+            }
+        }
+
+        System.out.println(myQueue.isEmpty());
+
+        if(tryQueue == true){
+
+
+            try {
+
+                for(int i = 0; i < moveCount; i++){
+                    System.out.println(myQueue.dequeue());
+                }
+
+            }
+            catch (Exception ex) {
+                System.out.println("Caught exception: " + ex.getMessage());
+            }
+
+            System.out.println(myQueue.isEmpty());
         }
 
     }
