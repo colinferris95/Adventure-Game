@@ -20,7 +20,7 @@ public class game {
     public static locationClass[] locations; // game locations
     public static gameItems[] itemsArray; //items array
     public static int[][]  locMatrix; // game matrix
-    public static String  currentLoc = "dungeon"; // the current location of the player
+    public static String  currentLoc = "starting space"; // the current location of the player
     public static String locItem = "map";
     public static String currentLocList;
     public static boolean playFlag = true; // bool flag for game status
@@ -31,6 +31,7 @@ public class game {
     public static String[] inventory; // creates inventory array
     public static  int idNum = 4;
     public static  int id = 4;
+    public static  int itemNum = 0;
     public static double wallet = 0;
     public static boolean isFound;
     public static boolean stackPop = false;
@@ -40,7 +41,7 @@ public class game {
 
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Dugeon's Keep: The Java adventure"); // intro text
+
         run();
 
         display();
@@ -77,12 +78,22 @@ public class game {
     private static void display(){
         locationStackTester();
         locationQueueTester();
+        if(moveCount == 1){
+            System.out.println("Welcome to Star Trek: The Next Generation, the text adventure ");
+            System.out.println("This game is loosly based on season 6 episode 20, The Chase");
+            System.out.println("The goal of the game is to find the 3 DNA fragments before the romulans do");
+            System.out.println("You have 20 turns to gather the fragments and head to the vilmoran system");
+            System.out.println("If you have any trouble, type help or h to bring up the help menu. Enjoy!");
+            System.out.println(" ");
+        }
 
-        System.out.println("end of stack test");
+        //System.out.println("end of stack test");
 
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
         " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locItem   );
         System.out.println(currentLoc);
+
+
         //nextMove();
 
     }
@@ -106,20 +117,18 @@ public class game {
 
     public static void move(){
         gameItems item0 = new gameItems(0);
-        item0.setItemName("Sword of justice");
-        item0.setLoc(0);
+        item0.setItemName("DNA fragment 1");
+        item0.setLoc(2);
 
         gameItems item1 = new gameItems(1);
-        item1.setItemName("Staff of peril");
-        item1.setLoc(1);
+        item1.setItemName("DNA fragment 2");
+        item1.setLoc(3);
 
         gameItems item2 = new gameItems(2);
-        item2.setItemName("Gray Shield");
-        item2.setLoc(2);
+        item2.setItemName("DNA fragment 3");
+        item2.setLoc(5);
 
-        gameItems item3 = new gameItems(3);
-        item3.setItemName("Knights Helm");
-        item3.setLoc(3);
+
 
 
         //linked list navigation
@@ -127,75 +136,77 @@ public class game {
         locationListMan locationList = new locationListMan();
 
         locationClass locale0 = new locationClass(0);
-        locale0.setName("dungeon");
+        locale0.setName("starting space");
         locale0.setItem("map");
         locale0.setCash(25);
         locationList.add(locale0);
 
         locationClass locale1 = new locationClass(0);
-        locale1.setName("Cliffside");
+        locale1.setName("space quadrant 1");
         locale1.setItem(item1.getItemName());
         locale1.setCash(25);
         locationList.add(locale1);
 
-
         locationClass locale2 = new locationClass(0);
-        locale2.setName("forest");
+        locale2.setName("Ruah IV");
+        locale2.setItem(item0.getItemName());
         locationList.add(locale2);
 
         locationClass locale3 = new locationClass(0);
-        locale3.setName("treasure");
+        locale3.setName("Indri VIII");
+        locale3.setItem(item1.getItemName());
         locationList.add(locale3);
 
         locationClass locale4 = new locationClass(0);
-        locale4.setName("Gate");
+        locale4.setName("Magick Shop Planet");
         locationList.add(locale4);
 
         locationClass locale5 = new locationClass(0);
-        locale5.setName("Magick Shoppe");
+        locale5.setName("Loren III");
+        locale5.setItem(item2.getItemName());
         locationList.add(locale5);
 
         locationClass locale6 = new locationClass(0);
-        locale6.setName("ocean");
+        locale6.setName("space quadrant 3");
         locationList.add(locale6);
 
         locationClass locale7 = new locationClass(0);
-        locale7.setName("Open Field");
+        locale7.setName("Vilmoran system");
         locationList.add(locale7);
 
         locationClass locale8 = new locationClass(0);
         locale8.setName("Brick Wall");
         locationList.add(locale8);
 
-        if(currentLocList == "dungeon"){
+        if(currentLocList == "starting space"){
             locationList.setHead(locale0);
         }
 
-        if(currentLocList == "Cliffside"){
+        if(currentLocList == "space quadrant 1"){
             locationList.setHead(locale1);
         }
 
-        if(currentLocList == "forest"){
+        if(currentLocList == "Ruah IV"){
             locationList.setHead(locale2);
         }
 
-        if(currentLocList == "treasure"){
+        if(currentLocList == "Indri VIII"){
             locationList.setHead(locale3);
         }
 
-        if(currentLocList == "Gate"){
+        if(currentLocList == "space quadrant 2"){
             locationList.setHead(locale4);
         }
 
-        if(currentLocList == "Magick Shoppe"){
+        if(currentLocList == "Loren III"){
             locationList.setHead(locale5);
         }
 
-        if(currentLocList == "ocean"){
+        if(currentLocList == "space quadrant 3"){
             locationList.setHead(locale6);
         }
 
-        if(currentLocList == "Open Field"){
+        if(currentLocList == "Vilmoran system"){
             locationList.setHead(locale7);
         }
 
@@ -207,26 +218,26 @@ public class game {
 
         if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("north")){
             direction = 0;
-            locale0.setNext(locale4);
-            locale4.setNext(locale7);
-            locale5.setNext(locale2);
-            locale2.setNext(locale3);
-            locale3.setNext(locale8);
-            locale1.setNext(locale8);
+            locale0.setNext(locale5);
+            locale4.setNext(locale0);
+            locale5.setNext(locale8);
+            locale2.setNext(locale8);
+            locale3.setNext(locale2);
+            locale1.setNext(locale6);
             locale7.setNext(locale8);
             locale6.setNext(locale8);
 
         }
         else if (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")){
             direction = 1;
-            locale7.setNext(locale4);
-            locale4.setNext(locale0);
-            locale3.setNext(locale2);
-            locale2.setNext(locale5);
-            locale5.setNext(locale8);
-            locale0.setNext(locale8);
+            locale7.setNext(locale8);
+            locale4.setNext(locale8);
+            locale3.setNext(locale8);
+            locale2.setNext(locale3);
+            locale5.setNext(locale0);
+            locale0.setNext(locale4);
             locale1.setNext(locale8);
-            locale6.setNext(locale8);
+            locale6.setNext(locale1);
         }
 
         else if (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("east")){
@@ -234,9 +245,9 @@ public class game {
             locale3.setNext(locale4);
             locale2.setNext(locale0);
             locale0.setNext(locale1);
-            locale1.setNext(locale6);
+            locale1.setNext(locale7);
             locale6.setNext(locale8);
-            locale5.setNext(locale8);
+            locale5.setNext(locale6);
             locale4.setNext(locale8);
             locale7.setNext(locale8);
 
@@ -244,7 +255,7 @@ public class game {
 
         else if (input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west")){
             direction = 3;
-            locale6.setNext(locale1);
+            locale6.setNext(locale5);
             locale1.setNext(locale0);
             locale0.setNext(locale2);
             locale3.setNext(locale8);
@@ -270,8 +281,9 @@ public class game {
 
         else if (input.equalsIgnoreCase("t") || input.equalsIgnoreCase("take")){
             if (locItem != null){
-                inventory[locationList.getHead().getId()] = locItem;
+                inventory[itemNum] = locItem;
                 System.out.println("you took an item");
+                itemNum = itemNum + 1;
             } else{
                 System.out.println("there is no item here.....");
             }
@@ -458,12 +470,12 @@ public class game {
 
     private static void locationStackTester() {
 
-        System.out.println("Stack tester.");
+        //System.out.println("Stack tester.");
 
         if (stackPop == false){
         try {
-            System.out.println("adding to stack");
-            System.out.println(currentLoc);
+            //System.out.println("adding to stack");
+            //System.out.println(currentLoc);
             if(currentLoc.equals("dungeon")){
                 myStack.push(0);
             }
@@ -493,7 +505,7 @@ public class game {
         }
         }
 
-        System.out.println(myStack.isEmpty());
+        //System.out.println(myStack.isEmpty());
 
         if(stackPop == true){
 
@@ -509,7 +521,7 @@ public class game {
                 System.out.println("Caught exception: " + ex.getMessage());
             }
 
-            System.out.println(myStack.isEmpty());
+            //System.out.println(myStack.isEmpty());
         }
 
     }
@@ -517,12 +529,12 @@ public class game {
 
     private static void locationQueueTester() {
 
-        System.out.println("Queue tester.");
+        //System.out.println("Queue tester.");
 
         if (tryQueue == false){
             try {
-                System.out.println("adding to Queue");
-                System.out.println(currentLoc);
+                //System.out.println("adding to Queue");
+                //System.out.println(currentLoc);
                 if(currentLoc.equals("dungeon")){
                     myQueue.enqueue(0);
                 }
@@ -552,7 +564,7 @@ public class game {
             }
         }
 
-        System.out.println(myQueue.isEmpty());
+        //System.out.println(myQueue.isEmpty());
 
         if(tryQueue == true){
 
@@ -568,7 +580,7 @@ public class game {
                 System.out.println("Caught exception: " + ex.getMessage());
             }
 
-            System.out.println(myQueue.isEmpty());
+            //System.out.println(myQueue.isEmpty());
         }
 
     }
@@ -614,18 +626,15 @@ public class game {
     private static void map(){
 
         if (inventory[0].equals("map")){
-            System.out.println("               Game Map");
+            System.out.println("               Galaxy Map");
             System.out.println("              ");
-            System.out.println("               Open Field");
-            System.out.println("                 ^");
-            System.out.println("                 |");
-            System.out.println("$Treasure$ --->   Gate");
-            System.out.println("  ^              ^");
-            System.out.println("  |              |");
-            System.out.println("Forest  <----- $Dungeon$ ------>  cliffside ------> ocean");
-            System.out.println("  |");
-            System.out.println("  V");
-            System.out.println("Magick Shoppe");
+            System.out.println("              Loren III ---------------> Space Quadrant 3");
+            System.out.println("                 ^                               ^");
+            System.out.println("                 |                               |");
+            System.out.println("Ruah IV  <----- $Starting Space$ ------>  Space Quadrant 1 ------> Vilmoran system");
+            System.out.println("  |                     ^");
+            System.out.println("  V                     |");
+            System.out.println("Indri VIII -----> Magic Shop Planet");
             System.out.println("         ");
 
         } else{
