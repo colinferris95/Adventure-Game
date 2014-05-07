@@ -1,10 +1,3 @@
-//TO DO LIST:
-/*
-modulate code
-fix next moves
-fix moves(add brick walls)
-project 4 objectives
- */
 
 
 
@@ -33,6 +26,7 @@ public class game {
     public static  int id = 4;
     public static  int itemNum = 0;
     public static double wallet = 0;
+    public static int puzzleCount = 0;
     public static boolean isFound;
     public static boolean stackPop = false;
     public static boolean tryQueue = false;
@@ -91,7 +85,8 @@ public class game {
 
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
         " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locItem   );
-        System.out.println(currentLoc);
+        //System.out.println(puzzleCount);
+
 
 
         //nextMove();
@@ -282,6 +277,12 @@ public class game {
         else if (input.equalsIgnoreCase("t") || input.equalsIgnoreCase("take")){
             if (locItem != null){
                 inventory[itemNum] = locItem;
+                    if (locItem.equalsIgnoreCase("DNA fragment 1") || locItem.equalsIgnoreCase("DNA fragment 2") || locItem.equalsIgnoreCase("DNA fragment 3")){
+                        puzzleCount = puzzleCount + 1;
+                            if(puzzleCount == 3){
+                                System.out.println("You have obtained the last fragment! Head to the Vilmoran System!");
+                            }
+                    }
                 System.out.println("you took an item");
                 itemNum = itemNum + 1;
             } else{
@@ -324,7 +325,7 @@ public class game {
 
         if(direction >=0){
           newLoc = locationList.getHead().getName();
-            System.out.println("newloc =  " + newLoc);
+
         } else{
             System.out.println("something went wrong, ill get back to this");
         }
@@ -347,11 +348,15 @@ public class game {
                 display();
             }
 
-            if (locationList.getHead().getNext().getName().equals("Magick Shoppe")){
+            if (locationList.getHead().getNext().getName().equals("Magick Shop Planet")){
 
                 createMagicItems();
                 display();
 
+            }
+
+            if (locationList.getHead().getNext().getName().equals("Vilmoran system") && puzzleCount == 3){
+                endGame();
             }
 
 
@@ -639,7 +644,65 @@ public class game {
 
         } else{
             System.out.println("you do not have the map yet");
+            display();
         }
     }
+
+    private static void endGame(){
+        System.out.println("\t\t\tYou are wondering who we are; why\n" +
+                "\t\t\twe have done this; how it has come\n" +
+                "\t\t\tthat I stand before you, the image\n" +
+                "\t\t\tof a being from so long ago.");
+        System.out.println(" ");
+        System.out.println("\t\t\tLife evolved on my planet before\n" +
+                "\t\t\tall others in this part of the\n" +
+                "\t\t\tgalaxy. We left our world,\n" +
+                "\t\t\texplored the stars, and found none\n" +
+                "\t\t\tlike ourselves. We were alone.\n" +
+                "\t\t\tOur civilization thrived for ages.\n" +
+                "\t\t\tBut what is the life of one race,\n" +
+                "\t\t\tcompared to the vast stretches of\n" +
+                "\t\t\tcosmic time? We knew that someday\n" +
+                "\t\t\twe would be gone. And that\n" +
+                "\t\t\tnothing of us would survive. So\n" +
+                "\t\t\twe left you.");
+        System.out.println(" ");
+        System.out.println("\t\t\tOur scientists seeded the\n" +
+                "\t\t\tprimordial oceans of many worlds,\n" +
+                "\t\t\twhere life was in its infancy.\n" +
+                "\t\t\tThese seed codes directed your\n" +
+                "\t\t\tevolution toward a physical form\n" +
+                "\t\t\tresembling ours -- this body you\n" +
+                "\t\t\tsee before you.");
+        System.out.println(" ");
+        System.out.println("\t\t\tWhich is, of course, shaped as\n" +
+                "\t\t\tyours is shaped. For you are the\n" +
+                "\t\t\tend result. The seed codes also\n" +
+                "\t\t\tcontained this message, which we\n" +
+                "\t\t\tscattered in fragments on many\n" +
+                "\t\t\tdifferent worlds. It was our hope\n" +
+                "\t\t\tthat you would have to come\n" +
+                "\t\t\ttogether in cooperation and\n" +
+                "\t\t\tfellowship in order to activate\n" +
+                "\t\t\tthis message. And if you can see\n" +
+                "\t\t\tand hear me, our hope has been\n" +
+                "\t\t\tfulfilled.");
+        System.out.println(" ");
+        System.out.println("\t\t\tYou are... a monument. Not to our\n" +
+                "\t\t\tgreatness, but to our existence.\n" +
+                "\t\t\tThat was our wish. That you too\n" +
+                "\t\t\twould know life, and would keep\n" +
+                "\t\t\talive our memory. There is\n" +
+                "\t\t\tsomething of us in each of you,\n" +
+                "\t\t\tand so, something of you in each\n" +
+                "\t\t\tother.");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("Remember us...");
+
+        playFlag = false;
+
+    }
 }
+
 
