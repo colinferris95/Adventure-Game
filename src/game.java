@@ -73,6 +73,7 @@ public class game {
         locationStackTester();
         locationQueueTester();
         if(moveCount == 1){
+            System.out.println(" ");
             System.out.println("Welcome to Star Trek: The Next Generation, the text adventure ");
             System.out.println("This game is loosly based on season 6 episode 20, The Chase");
             System.out.println("The goal of the game is to find the 3 DNA fragments before the romulans do");
@@ -162,7 +163,7 @@ public class game {
         locationList.add(locale5);
 
         locationClass locale6 = new locationClass(0);
-        locale6.setName("space quadrant 3");
+        locale6.setName("space quadrant 2");
         locationList.add(locale6);
 
         locationClass locale7 = new locationClass(0);
@@ -189,7 +190,7 @@ public class game {
             locationList.setHead(locale3);
         }
 
-        if(currentLocList == "space quadrant 2"){
+        if(currentLocList == "Magick Shop Planet"){
             locationList.setHead(locale4);
         }
 
@@ -197,7 +198,7 @@ public class game {
             locationList.setHead(locale5);
         }
 
-        if(currentLocList == "space quadrant 3"){
+        if(currentLocList == "space quadrant 2"){
             locationList.setHead(locale6);
         }
 
@@ -253,6 +254,7 @@ public class game {
             locale6.setNext(locale5);
             locale1.setNext(locale0);
             locale0.setNext(locale2);
+            locale7.setNext(locale1);
             locale3.setNext(locale8);
             locale2.setNext(locale8);
             locale5.setNext(locale8);
@@ -337,8 +339,8 @@ public class game {
              // output to console
             moveCount = moveCount + 1; //add to move count
 
-            if (locationList.getHead().getHasVisited() == false ){
-                locationList.getHead().setHasVisited(true);
+            if (locationList.getHead().getNext().getHasVisited() == false ){
+                locationList.getHead().getNext().setHasVisited(true);
                 gameScore = gameScore + 5;
                 //locationList.setHead(locationList.getHead().getNext());
                 currentLoc =locationList.getHead().getNext().getName();
@@ -481,28 +483,28 @@ public class game {
         try {
             //System.out.println("adding to stack");
             //System.out.println(currentLoc);
-            if(currentLoc.equals("dungeon")){
+            if(currentLoc.equals("starting space")){
                 myStack.push(0);
             }
-            else if(currentLoc.equals("Cliffside")){
+            else if(currentLoc.equals("space quadrant 1")){
                 myStack.push(1);
             }
-            else if(currentLoc.equals("forest")){
+            else if(currentLoc.equals("Ruah IV")){
                 myStack.push(2);
             }
-            else if(currentLoc.equals("treasure")){
+            else if(currentLoc.equals("Indri VIII")){
                 myStack.push(3);
             }
-            else if(currentLoc.equals("Gate")){
+            else if(currentLoc.equals("Magick Shop Planet")){
                 myStack.push(4);
             }
-            else if(currentLoc.equals("Magick Shoppe")){
+            else if(currentLoc.equals("Loren III")){
                 myStack.push(5);
             }
-            else if(currentLoc.equals("ocean")){
+            else if(currentLoc.equals("space quadrant 2")){
                 myStack.push(6);
             }
-            else if(currentLoc.equals("Open Field")){
+            else if(currentLoc.equals("Vilmoran system")){
                 myStack.push(7);
             }
         }catch (Exception ex) {
@@ -518,7 +520,31 @@ public class game {
             try {
 
                 for(int i = 0; i < moveCount; i++){
-                    System.out.println(myStack.pop());
+                    int popped = myStack.pop();
+                    if (popped == 0){
+                        System.out.println("starting space");
+                    }
+                    if (popped == 1){
+                        System.out.println("space quadrant 1");
+                    }
+                    if (popped == 2){
+                        System.out.println("Ruah IV");
+                    }
+                    if (popped == 3){
+                        System.out.println("Indri VIII");
+                    }
+                    if (popped == 4){
+                        System.out.println("Magick Shop Planet");
+                    }
+                    if (popped == 5){
+                        System.out.println("Loren III");
+                    }
+                    if (popped == 6){
+                        System.out.println("space quadrant 2");
+                    }
+                    if (popped == 7){
+                        System.out.println("Vilmoran system");
+                    }
                 }
 
             }
@@ -540,28 +566,28 @@ public class game {
             try {
                 //System.out.println("adding to Queue");
                 //System.out.println(currentLoc);
-                if(currentLoc.equals("dungeon")){
+                if(currentLoc.equals("starting space")){
                     myQueue.enqueue(0);
                 }
-                else if(currentLoc.equals("Cliffside")){
+                else if(currentLoc.equals("space quadrant 1")){
                     myQueue.enqueue(1);
                 }
-                else if(currentLoc.equals("forest")){
+                else if(currentLoc.equals("Ruah IV")){
                     myQueue.enqueue(2);
                 }
-                else if(currentLoc.equals("treasure")){
+                else if(currentLoc.equals("Indri VIII")){
                     myQueue.enqueue(3);
                 }
-                else if(currentLoc.equals("Gate")){
+                else if(currentLoc.equals("Magick Shop Planet")){
                     myQueue.enqueue(4);
                 }
-                else if(currentLoc.equals("Magick Shoppe")){
+                else if(currentLoc.equals("Loren III")){
                     myQueue.enqueue(5);
                 }
-                else if(currentLoc.equals("ocean")){
+                else if(currentLoc.equals("space quadrant 2")){
                     myQueue.enqueue(6);
                 }
-                else if(currentLoc.equals("Open Field")){
+                else if(currentLoc.equals("Vilmoran system")){
                     myQueue.enqueue(7);
                 }
             }catch (Exception ex) {
@@ -577,9 +603,33 @@ public class game {
             try {
 
                 for(int i = 0; i < moveCount; i++){
-                    System.out.println(myQueue.dequeue());
-                }
+                    int dequeued = myQueue.dequeue();
+                    if (dequeued == 0){
+                        System.out.println("starting space");
+                    }
+                    if (dequeued == 1){
+                        System.out.println("space quadrant 1");
+                    }
+                    if (dequeued == 2){
+                        System.out.println("Ruah IV");
+                    }
+                    if (dequeued == 3){
+                        System.out.println("Indri VIII");
+                    }
+                    if (dequeued == 4){
+                        System.out.println("Magick Shop Planet");
+                    }
+                    if (dequeued == 5){
+                        System.out.println("Loren III");
+                    }
+                    if (dequeued == 6){
+                        System.out.println("space quadrant 2");
+                    }
+                    if (dequeued == 7){
+                        System.out.println("Vilmoran system");
+                    }
 
+            }
             }
             catch (Exception ex) {
                 System.out.println("Caught exception: " + ex.getMessage());
@@ -589,7 +639,6 @@ public class game {
         }
 
     }
-
 
 
 
@@ -699,6 +748,15 @@ public class game {
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("Remember us...");
+        System.out.println(" ");
+        System.out.println("You have beat the game! Here is your location stack");
+        stackPop = true;
+        tryQueue = true;
+        locationStackTester();
+        System.out.println(" ");
+        System.out.println("and here is the queue stack");
+        locationQueueTester();
+        System.out.println(" ");
 
         playFlag = false;
 

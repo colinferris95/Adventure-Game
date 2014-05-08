@@ -14,9 +14,6 @@ public class locationQueue {
         if (backPtr < CAPACITY-1) {
             backPtr = backPtr + 1;
             arr[backPtr] = item;
-        } else {
-            Exception overflow = new Exception("Queue Overflow");
-            throw overflow;
         }
     }
 
@@ -34,10 +31,6 @@ public class locationQueue {
             arr[backPtr] = 0;
             // shift the back pointer towards the front.
             backPtr--;
-        } else {
-            // In case of underflow, throw an underflow exception.
-            Exception underflow = new Exception("Queue Underflow");
-            throw underflow;
         }
         return retVal;
     }
