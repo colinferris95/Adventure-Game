@@ -74,7 +74,7 @@ public class game {
         locationQueueTester();
         if(moveCount == 1){
             System.out.println(" ");
-            System.out.println("Welcome to Star Trek: The Next Generation, the text adventure ");
+            System.out.println("Welcome to Star Trek: The Next Generation text adventure ");
             System.out.println("This game is loosly based on season 6 episode 20, The Chase");
             System.out.println("The goal of the game is to find the 3 DNA fragments before the romulans do");
             System.out.println("You have 20 turns to gather the fragments and head to the vilmoran system");
@@ -82,24 +82,17 @@ public class game {
             System.out.println(" ");
         }
 
+
         //System.out.println("end of stack test");
 
         System.out.println(" your score is: " + gameScore + " your move count is " + moveCount + " Your wallet is " + wallet +
         " your achievement ratio is " + gameScore/moveCount + " " + "The item in this location is " + locItem   );
-        //System.out.println(puzzleCount);
-
-
-
-        //nextMove();
+        if(moveCount == 20){
+            System.out.println("The Romulans have beat you! You have Lost");
+            playFlag = false;
+        }
 
     }
-    //ends game by quiting main game loop
-    private static void quitGame(){
-        playFlag = false;
-        return;
-    }
-
-
 
 
     //creates player input from text console
@@ -308,7 +301,7 @@ public class game {
             return;
         }
         else if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")){
-            //quitGame();
+            playFlag = false;
             return;
         } else if (input.equalsIgnoreCase("m") || input.equalsIgnoreCase("map")){
             map();
@@ -754,7 +747,7 @@ public class game {
         tryQueue = true;
         locationStackTester();
         System.out.println(" ");
-        System.out.println("and here is the queue stack");
+        System.out.println("and here is the location queue");
         locationQueueTester();
         System.out.println(" ");
 
