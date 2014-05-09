@@ -55,12 +55,12 @@ public class game {
 
         //inventory
         inventory = new String[6];
-        inventory[0] = null;
-        inventory[1] = null;
-        inventory[2] = null;
-        inventory[3] = null;
-        inventory[4] = null;// magic item
-        inventory[5] = null;// magic item
+        inventory[0] = "";
+        inventory[1] = "";
+        inventory[2] = "";
+        inventory[3] = "";
+        inventory[4] = "";// magic item
+        inventory[5] = "";// magic item
 
 
 
@@ -75,9 +75,9 @@ public class game {
         if(moveCount == 1){
             System.out.println(" ");
             System.out.println("Welcome to Star Trek: The Next Generation text adventure ");
-            System.out.println("This game is loosly based on season 6 episode 20, The Chase");
-            System.out.println("The goal of the game is to find the 3 DNA fragments before the romulans do");
-            System.out.println("You have 20 turns to gather the fragments and head to the vilmoran system");
+            System.out.println("This game is loosely based on season 6 episode 20, The Chase");
+            System.out.println("The goal of the game is to find the 3 DNA fragments before the Romulans do");
+            System.out.println("You have 20 turns to gather the fragments and head to the Vilmoran system");
             System.out.println("If you have any trouble, type help or h to bring up the help menu. Enjoy!");
             System.out.println(" ");
         }
@@ -752,6 +752,7 @@ public class game {
         System.out.println(" ");
 
         playFlag = false;
+        return;
 
     }
 }
